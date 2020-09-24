@@ -15,7 +15,12 @@ class MyClassTests: XCTestCase {
 //		XCTFail("Tests not yet implemented in MyClassTests")
 //	}
 	
-	private let sut = MyClass()
+	private var sut: MyClass!
+	
+	override func setUp() {
+		super.setUp()
+		sut = MyClass()
+	}
 	
 	func test_methodOne() {
 		sut.methodOne()
@@ -23,5 +28,10 @@ class MyClassTests: XCTestCase {
 	
 	func test_methodTwo() {
 		sut.methodTwo()
+	}
+	
+	override func tearDown() {
+		sut = nil
+		super.tearDown()
 	}
 }
