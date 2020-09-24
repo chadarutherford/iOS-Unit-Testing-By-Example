@@ -1,8 +1,4 @@
-# Chapter 7 - XCTest Tips and Techniques
+# Project 7 - OutletConnections 
 ---
 
-## OutletConnections
-- Testing IBOutlets via Unit Test
-
-## ButtonTap
-- Testing button taps via Unit Test
+Testing IBOutlets via Unit Test
