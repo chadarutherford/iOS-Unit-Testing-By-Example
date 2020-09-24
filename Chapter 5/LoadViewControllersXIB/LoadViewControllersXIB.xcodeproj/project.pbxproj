@@ -13,7 +13,20 @@
 		6357E8F0251D137300F9AE3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6357E8EE251D137300F9AE3F /* Main.storyboard */; };
 		6357E8F2251D137400F9AE3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6357E8F1251D137400F9AE3F /* Assets.xcassets */; };
 		6357E8F5251D137400F9AE3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6357E8F3251D137400F9AE3F /* LaunchScreen.storyboard */; };
+		6369B0E6251D18D5007F5019 /* XIBBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369B0E4251D18D5007F5019 /* XIBBasedViewController.swift */; };
+		6369B0E7251D18D5007F5019 /* XIBBasedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6369B0E5251D18D5007F5019 /* XIBBasedViewController.xib */; };
+		6369B0EB251D195C007F5019 /* XIBBasedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369B0EA251D195C007F5019 /* XIBBasedViewControllerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6369B0DB251D18A9007F5019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6357E8DD251D137300F9AE3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6357E8E4251D137300F9AE3F;
+			remoteInfo = LoadViewControllersXIB;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6357E8E5251D137300F9AE3F /* LoadViewControllersXIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadViewControllersXIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +37,22 @@
 		6357E8F1251D137400F9AE3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6357E8F4251D137400F9AE3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6357E8F6251D137400F9AE3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6369B0D6251D18A9007F5019 /* LoadViewControllersXIBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoadViewControllersXIBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369B0DA251D18A9007F5019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6369B0E4251D18D5007F5019 /* XIBBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBBasedViewController.swift; sourceTree = "<group>"; };
+		6369B0E5251D18D5007F5019 /* XIBBasedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBBasedViewController.xib; sourceTree = "<group>"; };
+		6369B0EA251D195C007F5019 /* XIBBasedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBBasedViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6357E8E2251D137300F9AE3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369B0D3251D18A9007F5019 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				6357E8E7251D137300F9AE3F /* LoadViewControllersXIB */,
+				6369B0D7251D18A9007F5019 /* LoadViewControllersXIBTests */,
 				6357E8E6251D137300F9AE3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				6357E8E5251D137300F9AE3F /* LoadViewControllersXIB.app */,
+				6369B0D6251D18A9007F5019 /* LoadViewControllersXIBTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				6357E8EC251D137300F9AE3F /* ViewController.swift */,
+				6369B0E4251D18D5007F5019 /* XIBBasedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,10 +129,20 @@
 		6357E902251D13A500F9AE3F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				6369B0E5251D18D5007F5019 /* XIBBasedViewController.xib */,
 				6357E8EE251D137300F9AE3F /* Main.storyboard */,
 				6357E8F3251D137400F9AE3F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6369B0D7251D18A9007F5019 /* LoadViewControllersXIBTests */ = {
+			isa = PBXGroup;
+			children = (
+				6369B0DA251D18A9007F5019 /* Info.plist */,
+				6369B0EA251D195C007F5019 /* XIBBasedViewControllerTests.swift */,
+			);
+			path = LoadViewControllersXIBTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +165,24 @@
 			productReference = 6357E8E5251D137300F9AE3F /* LoadViewControllersXIB.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6369B0D5251D18A9007F5019 /* LoadViewControllersXIBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6369B0DD251D18A9007F5019 /* Build configuration list for PBXNativeTarget "LoadViewControllersXIBTests" */;
+			buildPhases = (
+				6369B0D2251D18A9007F5019 /* Sources */,
+				6369B0D3251D18A9007F5019 /* Frameworks */,
+				6369B0D4251D18A9007F5019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6369B0DC251D18A9007F5019 /* PBXTargetDependency */,
+			);
+			name = LoadViewControllersXIBTests;
+			productName = LoadViewControllersXIBTests;
+			productReference = 6369B0D6251D18A9007F5019 /* LoadViewControllersXIBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -138,6 +194,11 @@
 				TargetAttributes = {
 					6357E8E4251D137300F9AE3F = {
 						CreatedOnToolsVersion = 12.0;
+					};
+					6369B0D5251D18A9007F5019 = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+						TestTargetID = 6357E8E4251D137300F9AE3F;
 					};
 				};
 			};
@@ -155,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				6357E8E4251D137300F9AE3F /* LoadViewControllersXIB */,
+				6369B0D5251D18A9007F5019 /* LoadViewControllersXIBTests */,
 			);
 		};
 /* End PBXProject section */
@@ -164,9 +226,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6369B0E7251D18D5007F5019 /* XIBBasedViewController.xib in Resources */,
 				6357E8F5251D137400F9AE3F /* LaunchScreen.storyboard in Resources */,
 				6357E8F2251D137400F9AE3F /* Assets.xcassets in Resources */,
 				6357E8F0251D137300F9AE3F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6369B0D4251D18A9007F5019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,13 +247,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6369B0E6251D18D5007F5019 /* XIBBasedViewController.swift in Sources */,
 				6357E8ED251D137300F9AE3F /* ViewController.swift in Sources */,
 				6357E8E9251D137300F9AE3F /* AppDelegate.swift in Sources */,
 				6357E8EB251D137300F9AE3F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6369B0D2251D18A9007F5019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369B0EB251D195C007F5019 /* XIBBasedViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6369B0DC251D18A9007F5019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6357E8E4251D137300F9AE3F /* LoadViewControllersXIB */;
+			targetProxy = 6369B0DB251D18A9007F5019 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6357E8EE251D137300F9AE3F /* Main.storyboard */ = {
@@ -328,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
-				INFOPLIST_FILE = LoadViewControllersXIB/Info.plist;
+				INFOPLIST_FILE = LoadViewControllersXIB/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +434,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
-				INFOPLIST_FILE = LoadViewControllersXIB/Info.plist;
+				INFOPLIST_FILE = LoadViewControllersXIB/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +443,49 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6369B0DE251D18A9007F5019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P7DFWNNEL3;
+				INFOPLIST_FILE = LoadViewControllersXIBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.LoadViewControllersXIBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoadViewControllersXIB.app/LoadViewControllersXIB";
+			};
+			name = Debug;
+		};
+		6369B0DF251D18A9007F5019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P7DFWNNEL3;
+				INFOPLIST_FILE = LoadViewControllersXIBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.LoadViewControllersXIBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoadViewControllersXIB.app/LoadViewControllersXIB";
 			};
 			name = Release;
 		};
@@ -376,6 +506,15 @@
 			buildConfigurations = (
 				6357E8FA251D137400F9AE3F /* Debug */,
 				6357E8FB251D137400F9AE3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6369B0DD251D18A9007F5019 /* Build configuration list for PBXNativeTarget "LoadViewControllersXIBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369B0DE251D18A9007F5019 /* Debug */,
+				6369B0DF251D18A9007F5019 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
