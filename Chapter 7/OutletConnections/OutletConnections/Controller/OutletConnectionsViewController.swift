@@ -9,8 +9,8 @@ import UIKit
 
 class OutletConnectionsViewController: UIViewController {
 	
-	@IBOutlet private weak var label: UILabel!
-	@IBOutlet private weak var button: UIButton!
+	@IBOutlet private(set) weak var label: UILabel!
+	@IBOutlet private(set) weak var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

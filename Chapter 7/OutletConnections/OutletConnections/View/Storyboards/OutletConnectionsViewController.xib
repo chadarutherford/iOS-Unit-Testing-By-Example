@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OutletConnectionsViewController" customModule="OutletConnections" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="Fad-8s-DZn" id="SkT-kG-q4b"/>
+                <outlet property="button" destination="Fad-8s-DZn" id="sts-Br-Bft"/>
                 <outlet property="label" destination="qxf-Ec-i3R" id="sL9-SS-SH7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
