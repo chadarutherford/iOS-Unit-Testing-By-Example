@@ -15,6 +15,7 @@
 		63C006F6251D1EFB00863733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C006F4251D1EFB00863733 /* LaunchScreen.storyboard */; };
 		63D6C576251D1FB600587613 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6C575251D1FB600587613 /* Analytics.swift */; };
 		63D6C580251D20C900587613 /* HardDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6C57F251D20C900587613 /* HardDependenciesTests.swift */; };
+		63D6C58A251D213900587613 /* MySingletonAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6C589251D213900587613 /* MySingletonAnalytics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		63D6C57D251D20C900587613 /* HardDependenciesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HardDependenciesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D6C57F251D20C900587613 /* HardDependenciesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardDependenciesTests.swift; sourceTree = "<group>"; };
 		63D6C581251D20C900587613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63D6C589251D213900587613 /* MySingletonAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySingletonAnalytics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				63D6C575251D1FB600587613 /* Analytics.swift */,
+				63D6C589251D213900587613 /* MySingletonAnalytics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				63C006EE251D1EFA00863733 /* ViewController.swift in Sources */,
 				63C006EA251D1EFA00863733 /* AppDelegate.swift in Sources */,
 				63D6C576251D1FB600587613 /* Analytics.swift in Sources */,
+				63D6C58A251D213900587613 /* MySingletonAnalytics.swift in Sources */,
 				63C006EC251D1EFA00863733 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
