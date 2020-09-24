@@ -13,7 +13,8 @@
 		630216D9251CF71A003F1438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630216D7251CF71A003F1438 /* Main.storyboard */; };
 		630216DB251CF71A003F1438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630216DA251CF71A003F1438 /* Assets.xcassets */; };
 		630216DE251CF71A003F1438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630216DC251CF71A003F1438 /* LaunchScreen.storyboard */; };
-		630216F4251CF775003F1438 /* CodeCoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630216F3251CF775003F1438 /* CodeCoverageTests.swift */; };
+		630216FF251CF7C3003F1438 /* CoveredClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630216FE251CF7C3003F1438 /* CoveredClass.swift */; };
+		63021707251CF82D003F1438 /* CoveredClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63021706251CF82D003F1438 /* CoveredClassTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,9 @@
 		630216DD251CF71A003F1438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		630216DF251CF71A003F1438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		630216F1251CF775003F1438 /* CodeCoverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		630216F3251CF775003F1438 /* CodeCoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageTests.swift; sourceTree = "<group>"; };
 		630216F5251CF775003F1438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630216FE251CF7C3003F1438 /* CoveredClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClass.swift; sourceTree = "<group>"; };
+		63021706251CF82D003F1438 /* CoveredClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClassTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		630216D0251CF71A003F1438 /* CodeCoverage */ = {
 			isa = PBXGroup;
 			children = (
+				630216FD251CF7B2003F1438 /* Model */,
 				630216EA251CF747003F1438 /* View */,
 				630216E9251CF73E003F1438 /* Controller */,
 				630216E6251CF722003F1438 /* Support */,
@@ -133,10 +136,18 @@
 		630216F2251CF775003F1438 /* CodeCoverageTests */ = {
 			isa = PBXGroup;
 			children = (
-				630216F3251CF775003F1438 /* CodeCoverageTests.swift */,
 				630216F5251CF775003F1438 /* Info.plist */,
+				63021706251CF82D003F1438 /* CoveredClassTests.swift */,
 			);
 			path = CodeCoverageTests;
+			sourceTree = "<group>";
+		};
+		630216FD251CF7B2003F1438 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				630216FE251CF7C3003F1438 /* CoveredClass.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 					};
 					630216F0251CF775003F1438 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 630216CD251CF71A003F1438;
 					};
 				};
@@ -242,6 +254,7 @@
 				630216D6251CF71A003F1438 /* ViewController.swift in Sources */,
 				630216D2251CF71A003F1438 /* AppDelegate.swift in Sources */,
 				630216D4251CF71A003F1438 /* SceneDelegate.swift in Sources */,
+				630216FF251CF7C3003F1438 /* CoveredClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630216F4251CF775003F1438 /* CodeCoverageTests.swift in Sources */,
+				63021707251CF82D003F1438 /* CoveredClassTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = CodeCoverageTests/Info.plist;
@@ -451,6 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.CodeCoverageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCoverage.app/CodeCoverage";
@@ -461,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = CodeCoverageTests/Info.plist;
