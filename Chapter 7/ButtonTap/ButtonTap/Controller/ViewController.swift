@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	@IBOutlet private(set) weak var button: UIButton!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 	}
-
-
+	
+	@IBAction private func buttonTapped(_ sender: UIButton) {
+		print(">> Button was tapped")
+	}
 }
-

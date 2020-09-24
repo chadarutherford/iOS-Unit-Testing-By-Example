@@ -13,7 +13,7 @@
 		6317BABF251D3D3900C68FEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6317BABD251D3D3900C68FEF /* Main.storyboard */; };
 		6317BAC1251D3D3A00C68FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6317BAC0251D3D3A00C68FEF /* Assets.xcassets */; };
 		6317BAC4251D3D3A00C68FEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6317BAC2251D3D3A00C68FEF /* LaunchScreen.storyboard */; };
-		6317BACF251D3D3A00C68FEF /* ButtonTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317BACE251D3D3A00C68FEF /* ButtonTapTests.swift */; };
+		6317BAFC251D476700C68FEF /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317BAFB251D476700C68FEF /* ViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		6317BAC3251D3D3A00C68FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6317BAC5251D3D3A00C68FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6317BACA251D3D3A00C68FEF /* ButtonTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButtonTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6317BACE251D3D3A00C68FEF /* ButtonTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTapTests.swift; sourceTree = "<group>"; };
 		6317BAD0251D3D3A00C68FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6317BAFB251D476700C68FEF /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 		6317BACD251D3D3A00C68FEF /* ButtonTapTests */ = {
 			isa = PBXGroup;
 			children = (
-				6317BACE251D3D3A00C68FEF /* ButtonTapTests.swift */,
 				6317BAD0251D3D3A00C68FEF /* Info.plist */,
+				6317BAFB251D476700C68FEF /* ViewControllerTests.swift */,
 			);
 			path = ButtonTapTests;
 			sourceTree = "<group>";
@@ -191,6 +191,7 @@
 					};
 					6317BAC9251D3D3A00C68FEF = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 6317BAB3251D3D3900C68FEF;
 					};
 				};
@@ -249,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6317BACF251D3D3A00C68FEF /* ButtonTapTests.swift in Sources */,
+				6317BAFC251D476700C68FEF /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +443,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = ButtonTapTests/Info.plist;
@@ -453,6 +455,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.ButtonTapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ButtonTap.app/ButtonTap";
@@ -464,6 +467,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = ButtonTapTests/Info.plist;
