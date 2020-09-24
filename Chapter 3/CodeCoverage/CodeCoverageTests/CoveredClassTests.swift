@@ -10,7 +10,13 @@ import XCTest
 
 class CoveredClassTests: XCTestCase {
 	
-	func test_max_with1And2_shouldReturnSomething() {
+	func test_max_with1And2_shouldReturn2() {
 		let result = CoveredClass.max(1, 2)
+		XCTAssertEqual(result, 2)
+	}
+	
+	func test_max_with3And2_shouldReturn3() {
+		let result = CoveredClass.max(3, 2)
+		XCTAssertEqual(result, 3)
 	}
 }
