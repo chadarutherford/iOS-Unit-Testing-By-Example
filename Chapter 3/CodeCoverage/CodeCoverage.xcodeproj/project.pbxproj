@@ -136,8 +136,8 @@
 		630216F2251CF775003F1438 /* CodeCoverageTests */ = {
 			isa = PBXGroup;
 			children = (
-				630216F5251CF775003F1438 /* Info.plist */,
 				63021706251CF82D003F1438 /* CoveredClassTests.swift */,
+				630216F5251CF775003F1438 /* Info.plist */,
 			);
 			path = CodeCoverageTests;
 			sourceTree = "<group>";
