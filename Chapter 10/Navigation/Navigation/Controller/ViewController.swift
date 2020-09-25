@@ -31,6 +31,10 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	deinit {
+		print(">> ViewController deinit")
+	}
+	
 	@IBAction func codePushTapped(_ sender: UIButton) {
 		let nextVC = CodeNextViewController(labelText: "Pushed from code")
 		self.navigationController?.pushViewController(nextVC, animated: true)

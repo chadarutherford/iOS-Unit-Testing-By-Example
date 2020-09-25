@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		63DA8FBB251E0C280080B5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DA8FB9251E0C280080B5A6 /* LaunchScreen.storyboard */; };
 		63DA8FDD251E0F1F0080B5A6 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA8FDC251E0F1F0080B5A6 /* CodeNextViewController.swift */; };
 		63DA8FE1251E11D00080B5A6 /* SegueNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA8FE0251E11D00080B5A6 /* SegueNextViewController.swift */; };
+		63DA8FE5251E13D80080B5A6 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA8FE4251E13D80080B5A6 /* ViewControllerTests.swift */; };
+		63DA8FE9251E14030080B5A6 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA8FE8251E14030080B5A6 /* TestHelpers.swift */; };
+		63DA8FEF251E1A270080B5A6 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DA8FEE251E1A270080B5A6 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
+		63DA8FF3251E1A460080B5A6 /* ViewControllerPresentationSpy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63DA8FEE251E1A270080B5A6 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,19 @@
 			remoteInfo = Navigation;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63DA8FF2251E1A3C0080B5A6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				63DA8FF3251E1A460080B5A6 /* ViewControllerPresentationSpy.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		63DA8FAB251E0C280080B5A6 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +57,9 @@
 		63DA8FD2251E0C7F0080B5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63DA8FDC251E0F1F0080B5A6 /* CodeNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
 		63DA8FE0251E11D00080B5A6 /* SegueNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNextViewController.swift; sourceTree = "<group>"; };
+		63DA8FE4251E13D80080B5A6 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		63DA8FE8251E14030080B5A6 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		63DA8FEE251E1A270080B5A6 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ViewControllerPresentationSpy.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DA8FEF251E1A270080B5A6 /* ViewControllerPresentationSpy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +158,10 @@
 		63DA8FCF251E0C7F0080B5A6 /* NavigationTests */ = {
 			isa = PBXGroup;
 			children = (
+				63DA8FEE251E1A270080B5A6 /* ViewControllerPresentationSpy.framework */,
+				63DA8FE4251E13D80080B5A6 /* ViewControllerTests.swift */,
 				63DA8FD2251E0C7F0080B5A6 /* Info.plist */,
+				63DA8FE8251E14030080B5A6 /* TestHelpers.swift */,
 			);
 			path = NavigationTests;
 			sourceTree = "<group>";
@@ -169,6 +193,7 @@
 				63DA8FCA251E0C7F0080B5A6 /* Sources */,
 				63DA8FCB251E0C7F0080B5A6 /* Frameworks */,
 				63DA8FCC251E0C7F0080B5A6 /* Resources */,
+				63DA8FF2251E1A3C0080B5A6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -194,6 +219,7 @@
 					};
 					63DA8FCD251E0C7F0080B5A6 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 63DA8FAA251E0C280080B5A6;
 					};
 				};
@@ -254,6 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DA8FE5251E13D80080B5A6 /* ViewControllerTests.swift in Sources */,
+				63DA8FE9251E14030080B5A6 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,8 +473,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NavigationTests",
+				);
 				INFOPLIST_FILE = NavigationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +488,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.NavigationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navigation.app/Navigation";
@@ -465,8 +499,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NavigationTests",
+				);
 				INFOPLIST_FILE = NavigationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
