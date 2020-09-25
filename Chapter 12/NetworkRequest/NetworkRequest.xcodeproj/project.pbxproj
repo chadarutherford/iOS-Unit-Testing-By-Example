@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63281A2D251E378600AF098C /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63281A2C251E378600AF098C /* ViewControllerTests.swift */; };
+		63281A31251E387800AF098C /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63281A30251E387800AF098C /* TestHelpers.swift */; };
+		632842BA251E358300C0A52D /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632842B9251E358300C0A52D /* URLSessionProtocol.swift */; };
+		632842BE251E36A400C0A52D /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632842BD251E36A400C0A52D /* MockURLSession.swift */; };
 		63F21D93251E31FC0047FC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F21D92251E31FC0047FC87 /* AppDelegate.swift */; };
 		63F21D95251E31FC0047FC87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F21D94251E31FC0047FC87 /* SceneDelegate.swift */; };
 		63F21D97251E31FC0047FC87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F21D96251E31FC0047FC87 /* ViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63281A2C251E378600AF098C /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		63281A30251E387800AF098C /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		632842B9251E358300C0A52D /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		632842BD251E36A400C0A52D /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		63F21D8F251E31FC0047FC87 /* NetworkRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F21D92251E31FC0047FC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63F21D94251E31FC0047FC87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		632842B8251E356C00C0A52D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				632842B9251E358300C0A52D /* URLSessionProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		63F21D86251E31FC0047FC87 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +95,7 @@
 			children = (
 				63F21DBC251E32460047FC87 /* View */,
 				63F21DBB251E323E0047FC87 /* Controller */,
+				632842B8251E356C00C0A52D /* Protocols */,
 				63F21DB9251E32270047FC87 /* Support */,
 			);
 			path = NetworkRequest;
@@ -87,6 +104,9 @@
 		63F21DAC251E32160047FC87 /* NetworkRequestTests */ = {
 			isa = PBXGroup;
 			children = (
+				63281A2C251E378600AF098C /* ViewControllerTests.swift */,
+				632842BD251E36A400C0A52D /* MockURLSession.swift */,
+				63281A30251E387800AF098C /* TestHelpers.swift */,
 				63F21DAF251E32160047FC87 /* Info.plist */,
 			);
 			path = NetworkRequestTests;
@@ -188,6 +208,7 @@
 					};
 					63F21DAA251E32160047FC87 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 63F21D8E251E31FC0047FC87;
 					};
 				};
@@ -236,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632842BA251E358300C0A52D /* URLSessionProtocol.swift in Sources */,
 				63F21D97251E31FC0047FC87 /* ViewController.swift in Sources */,
 				63F21D93251E31FC0047FC87 /* AppDelegate.swift in Sources */,
 				63F21D95251E31FC0047FC87 /* SceneDelegate.swift in Sources */,
@@ -246,6 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63281A2D251E378600AF098C /* ViewControllerTests.swift in Sources */,
+				632842BE251E36A400C0A52D /* MockURLSession.swift in Sources */,
+				63281A31251E387800AF098C /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = NetworkRequestTests/Info.plist;
@@ -447,6 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.NetworkRequestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkRequest.app/NetworkRequest";
@@ -457,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = NetworkRequestTests/Info.plist;
