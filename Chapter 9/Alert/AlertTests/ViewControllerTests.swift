@@ -37,6 +37,16 @@ class ViewControllerTests: XCTestCase {
 		XCTAssertEqual(alertVerifier.preferredAction?.title, "OK", "preferred action")
 	}
 	
+	func test_executeAlertAction_withOKButton() throws {
+		sut.button.tap()
+		try alertVerifier.executeAction(forButton: "OK")
+	}
+	
+	func test_executeAlertAction_withCancelButton() throws {
+		sut.button.tap()
+		try alertVerifier.executeAction(forButton: "Cancel")
+	}
+	
 	override func tearDown() {
 		alertVerifier = nil
 		sut = nil
