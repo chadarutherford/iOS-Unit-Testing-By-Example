@@ -5,7 +5,7 @@
 //  Created by Chad Rutherford on 9/25/20.
 //
 
-import Foundation
+import XCTest
 @testable import NetworkRequest
 
 class MockURLSession: URLSessionProtocol {
@@ -22,5 +22,10 @@ class MockURLSession: URLSessionProtocol {
 		override func resume() {
 			
 		}
+	}
+	
+	func verifyDataTask(with request: URLRequest, file: StaticString = #file, line: UInt = #line) {
+		XCTAssertEqual(dataTaskCallCount, 1, "call count", file: file, line: line)
+		XCTAssertEqual(dataTaskArgsRequest.first, request, "request", file: file, line: line)
 	}
 }

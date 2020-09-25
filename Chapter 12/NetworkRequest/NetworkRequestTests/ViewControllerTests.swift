@@ -24,8 +24,7 @@ class ViewControllerTests: XCTestCase {
 	func test_tappingButton_shouldMakeDataTaskToSearchForEBookOutFromBoneville() {
 		sut.loadViewIfNeeded()
 		sut.button.tap()
-		XCTAssertEqual(session.dataTaskCallCount, 1, "call count")
-		XCTAssertEqual(session.dataTaskArgsRequest.first, URLRequest(url: URL(string: "https://itunes.apple.com/search?media=ebook&term=out%20from%20boneville")!), "request")
+		session.verifyDataTask(with: URLRequest(url: URL(string: "https://itunes.apple.com/search?media=ebook&term=out%20from%20boneville")!))
 	}
 
     override func tearDownWithError() throws {
