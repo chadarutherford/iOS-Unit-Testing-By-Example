@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 	
 	@IBAction private func buttonTapped(_ sender: UIButton) {
 		let alert = UIAlertController(
-			title: "Do The Thing?",
+			title: "Do the Thing?",
 			message: "Let us know if you want to do the thing",
 			preferredStyle: .alert
 		)

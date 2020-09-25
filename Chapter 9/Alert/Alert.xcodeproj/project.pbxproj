@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		631C6AC7251D4D21009D790B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631C6AC5251D4D21009D790B /* LaunchScreen.storyboard */; };
 		631C6AD3251D4D90009D790B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C6AD2251D4D90009D790B /* ViewController.swift */; };
 		631C6AEC251D4F79009D790B /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C6AEB251D4F79009D790B /* ViewControllerTests.swift */; };
+		631C6AF8251D51AD009D790B /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C6AF7251D51AD009D790B /* TestingHelpers.swift */; };
+		63F61B4C251E080C00F7F154 /* ViewControllerPresentationSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F61B4B251E080C00F7F154 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
+		63F61B51251E088D00F7F154 /* ViewControllerPresentationSpy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63F61B4B251E080C00F7F154 /* ViewControllerPresentationSpy.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +28,19 @@
 			remoteInfo = Alert;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		631C6AF3251D514F009D790B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				63F61B51251E088D00F7F154 /* ViewControllerPresentationSpy.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		631C6AB7251D4D20009D790B /* Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alert.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +54,8 @@
 		631C6ADD251D4E1B009D790B /* AlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631C6AE1251D4E1B009D790B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631C6AEB251D4F79009D790B /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		631C6AF7251D51AD009D790B /* TestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
+		63F61B4B251E080C00F7F154 /* ViewControllerPresentationSpy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ViewControllerPresentationSpy.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F61B4C251E080C00F7F154 /* ViewControllerPresentationSpy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,8 +152,10 @@
 		631C6ADE251D4E1B009D790B /* AlertTests */ = {
 			isa = PBXGroup;
 			children = (
-				631C6AE1251D4E1B009D790B /* Info.plist */,
+				63F61B4B251E080C00F7F154 /* ViewControllerPresentationSpy.framework */,
 				631C6AEB251D4F79009D790B /* ViewControllerTests.swift */,
+				631C6AF7251D51AD009D790B /* TestingHelpers.swift */,
+				631C6AE1251D4E1B009D790B /* Info.plist */,
 			);
 			path = AlertTests;
 			sourceTree = "<group>";
@@ -166,6 +187,7 @@
 				631C6AD9251D4E1B009D790B /* Sources */,
 				631C6ADA251D4E1B009D790B /* Frameworks */,
 				631C6ADB251D4E1B009D790B /* Resources */,
+				631C6AF3251D514F009D790B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -250,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631C6AF8251D51AD009D790B /* TestingHelpers.swift in Sources */,
 				631C6AEC251D4F79009D790B /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +468,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AlertTests",
+				);
 				INFOPLIST_FILE = AlertTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -467,6 +494,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AlertTests",
+				);
 				INFOPLIST_FILE = AlertTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
