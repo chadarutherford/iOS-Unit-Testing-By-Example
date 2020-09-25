@@ -11,17 +11,18 @@ import XCTest
 
 class ViewControllerTests: XCTestCase {
 	
+	private var sut: ViewController!
 	private var alertVerifier: AlertVerifier!
 	
 	override func setUp() {
 		super.setUp()
 		alertVerifier = AlertVerifier()
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
+		sut.loadViewIfNeeded()
 	}
 	
 	func test_buttonTap_shouldShowAlert() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let sut: ViewController = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
-		sut.loadViewIfNeeded()
 		sut.button.tap()
 		alertVerifier.verify(
 			title: "Do the Thing?",
@@ -38,6 +39,7 @@ class ViewControllerTests: XCTestCase {
 	
 	override func tearDown() {
 		alertVerifier = nil
+		sut = nil
 		super.tearDown()
 	}
 }
