@@ -13,6 +13,8 @@
 		63DB1796251E7E4F00371A30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DB1794251E7E4F00371A30 /* Main.storyboard */; };
 		63DB1798251E7E5000371A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DB1797251E7E5000371A30 /* Assets.xcassets */; };
 		63DB179B251E7E5000371A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DB1799251E7E5000371A30 /* LaunchScreen.storyboard */; };
+		63DB17BD251E82AF00371A30 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB17BC251E82AF00371A30 /* ViewControllerTests.swift */; };
+		63DB17C1251E863A00371A30 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB17C0251E863A00371A30 /* TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		63DB179C251E7E5000371A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63DB17AE251E7E9B00371A30 /* TextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DB17B2251E7E9B00371A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DB17BC251E82AF00371A30 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		63DB17C0251E863A00371A30 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		63DB17AF251E7E9B00371A30 /* TextFieldTests */ = {
 			isa = PBXGroup;
 			children = (
+				63DB17BC251E82AF00371A30 /* ViewControllerTests.swift */,
+				63DB17C0251E863A00371A30 /* TestHelpers.swift */,
 				63DB17B2251E7E9B00371A30 /* Info.plist */,
 			);
 			path = TextFieldTests;
@@ -188,6 +194,7 @@
 					};
 					63DB17AD251E7E9B00371A30 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 63DB178A251E7E4F00371A30;
 					};
 				};
@@ -246,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DB17BD251E82AF00371A30 /* ViewControllerTests.swift in Sources */,
+				63DB17C1251E863A00371A30 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = TextFieldTests/Info.plist;
@@ -447,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.TextFieldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextField.app/TextField";
@@ -457,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = TextFieldTests/Info.plist;
