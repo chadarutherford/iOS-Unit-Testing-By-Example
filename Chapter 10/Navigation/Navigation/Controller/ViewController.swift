@@ -18,6 +18,19 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier {
+		case SegueNextViewController.pushIdentifier:
+			guard let nextVC = segue.destination as? SegueNextViewController else { return }
+			nextVC.labelText = "Pushed from segue"
+		case SegueNextViewController.modalIdentifier:
+			guard let nextVC = segue.destination as? SegueNextViewController else { return }
+			nextVC.labelText = "Modal from segue"
+		default:
+			return
+		}
+	}
+	
 	@IBAction func codePushTapped(_ sender: UIButton) {
 		let nextVC = CodeNextViewController(labelText: "Pushed from code")
 		self.navigationController?.pushViewController(nextVC, animated: true)

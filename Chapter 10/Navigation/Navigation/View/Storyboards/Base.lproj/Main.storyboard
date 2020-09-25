@@ -28,6 +28,7 @@
                                 <state key="normal" title="Segue Push"/>
                                 <connections>
                                     <action selector="seguePushTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OHN-mh-y5S"/>
+                                    <segue destination="fp1-7g-Zp2" kind="show" identifier="SegueNextViewControllerPush" id="SxL-nd-3aW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIe-DF-yd7">
@@ -35,6 +36,7 @@
                                 <state key="normal" title="Segue Modal"/>
                                 <connections>
                                     <action selector="segueModalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BEo-Hl-4du"/>
+                                    <segue destination="fp1-7g-Zp2" kind="presentation" identifier="SegueNextViewControllerModal" id="oZp-nZ-rzh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjM-Ri-co9">
@@ -70,6 +72,37 @@
             </objects>
             <point key="canvasLocation" x="744.92753623188412" y="137.94642857142856"/>
         </scene>
+        <!--Segue Next View Controller-->
+        <scene sceneID="Cbm-Kz-8d1">
+            <objects>
+                <viewController id="fp1-7g-Zp2" customClass="SegueNextViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lKg-Cv-u0m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hb-mp-UaV">
+                                <rect key="frame" x="186" y="393.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="55H-HL-45l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Hb-mp-UaV" firstAttribute="centerY" secondItem="55H-HL-45l" secondAttribute="centerY" id="APR-6R-VFO"/>
+                            <constraint firstItem="3Hb-mp-UaV" firstAttribute="centerX" secondItem="55H-HL-45l" secondAttribute="centerX" id="yZ6-HL-C6X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BIu-nD-pJz"/>
+                    <connections>
+                        <outlet property="label" destination="3Hb-mp-UaV" id="y2C-cq-cfc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sw6-FV-FJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="138"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cAw-Ai-jlg">
             <objects>
@@ -86,9 +119,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQx-gl-uJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165.21739130434784" y="137.94642857142856"/>
+            <point key="canvasLocation" x="83" y="138"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oZp-nZ-rzh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

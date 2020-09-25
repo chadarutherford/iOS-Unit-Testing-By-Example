@@ -14,6 +14,7 @@
 		63DA8FB8251E0C280080B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DA8FB7251E0C280080B5A6 /* Assets.xcassets */; };
 		63DA8FBB251E0C280080B5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DA8FB9251E0C280080B5A6 /* LaunchScreen.storyboard */; };
 		63DA8FDD251E0F1F0080B5A6 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA8FDC251E0F1F0080B5A6 /* CodeNextViewController.swift */; };
+		63DA8FE1251E11D00080B5A6 /* SegueNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA8FE0251E11D00080B5A6 /* SegueNextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		63DA8FCE251E0C7F0080B5A6 /* NavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DA8FD2251E0C7F0080B5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63DA8FDC251E0F1F0080B5A6 /* CodeNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
+		63DA8FE0251E11D00080B5A6 /* SegueNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				63DA8FB2251E0C280080B5A6 /* ViewController.swift */,
 				63DA8FDC251E0F1F0080B5A6 /* CodeNextViewController.swift */,
+				63DA8FE0251E11D00080B5A6 /* SegueNextViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63DA8FDD251E0F1F0080B5A6 /* CodeNextViewController.swift in Sources */,
+				63DA8FE1251E11D00080B5A6 /* SegueNextViewController.swift in Sources */,
 				63DA8FB3251E0C280080B5A6 /* ViewController.swift in Sources */,
 				63DA8FAF251E0C280080B5A6 /* AppDelegate.swift in Sources */,
 				63DA8FB1251E0C280080B5A6 /* SceneDelegate.swift in Sources */,
