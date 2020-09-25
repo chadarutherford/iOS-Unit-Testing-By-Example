@@ -14,6 +14,7 @@
 		637003A1251E2058002F8C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637003A0251E2058002F8C9E /* Assets.xcassets */; };
 		637003A4251E2058002F8C9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637003A2251E2058002F8C9E /* LaunchScreen.storyboard */; };
 		639DE708251E23B100CA781B /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DE707251E23B100CA781B /* UserDefaultsProtocol.swift */; };
+		639DE70E251E287600CA781B /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639DE70D251E287600CA781B /* MockUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		637003B0251E2065002F8C9E /* UserDefaultsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserDefaultsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		637003B4251E2065002F8C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639DE707251E23B100CA781B /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		639DE70D251E287600CA781B /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		637003B1251E2065002F8C9E /* UserDefaultsTests */ = {
 			isa = PBXGroup;
 			children = (
+				639DE70D251E287600CA781B /* MockUserDefaults.swift */,
 				637003B4251E2065002F8C9E /* Info.plist */,
 			);
 			path = UserDefaultsTests;
@@ -199,6 +202,7 @@
 					};
 					637003AF251E2065002F8C9E = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 63700393251E2058002F8C9E;
 					};
 				};
@@ -258,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639DE70E251E287600CA781B /* MockUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = UserDefaultsTests/Info.plist;
@@ -459,6 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.UserDefaultsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UserDefaults.app/UserDefaults";
@@ -469,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = UserDefaultsTests/Info.plist;
