@@ -16,3 +16,11 @@ extension UIButton {
 func executeRunLoop() {
 	RunLoop.current.run(until: Date())
 }
+
+extension UIViewController {
+	func putInWindow() {
+		let window = UIWindow()
+		window.rootViewController = self
+		window.isHidden = false
+	}
+}

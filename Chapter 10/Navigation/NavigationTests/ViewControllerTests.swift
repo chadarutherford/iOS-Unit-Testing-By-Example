@@ -11,10 +11,18 @@ import XCTest
 
 class ViewControllerTests: XCTestCase {
 	
-	func test_tappingCodePushButton_shouldPushCodeNextViewController() {
+	private var sut: ViewController!
+	private var presentationVerifier: PresentationVerifier!
+	
+	override func setUp() {
+		super.setUp()
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let sut: ViewController = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
+		sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
 		sut.loadViewIfNeeded()
+		presentationVerifier = PresentationVerifier()
+	}
+	
+	func test_tappingCodePushButton_shouldPushCodeNextViewController() {
 		let navigation = UINavigationController(rootViewController: sut)
 		sut.codePushButton.tap()
 		executeRunLoop()
@@ -28,26 +36,19 @@ class ViewControllerTests: XCTestCase {
 		XCTAssertEqual(codeNextVC.label.text, "Pushed from code")
 	}
 	
-	func test_INCORRECT_tappingCodeModalButton_shouldPresentCodeNextViewController() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let sut: ViewController = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
-		sut.loadViewIfNeeded()
-		UIApplication.shared.windows.first?.rootViewController = sut
-		sut.codeModalButton.tap()
-		let presentedVC = sut.presentedViewController
-		guard let codeNextVC = presentedVC as? CodeNextViewController else {
-			XCTFail("Expected CodeNextViewController, "
-						+ "but was \(String(describing: presentedVC))")
-			return
-		}
-		XCTAssertEqual(codeNextVC.label.text, "Modal from code")
-	}
+//	func test_INCORRECT_tappingCodeModalButton_shouldPresentCodeNextViewController() {
+//		UIApplication.shared.windows.first?.rootViewController = sut
+//		sut.codeModalButton.tap()
+//		let presentedVC = sut.presentedViewController
+//		guard let codeNextVC = presentedVC as? CodeNextViewController else {
+//			XCTFail("Expected CodeNextViewController, "
+//						+ "but was \(String(describing: presentedVC))")
+//			return
+//		}
+//		XCTAssertEqual(codeNextVC.label.text, "Modal from code")
+//	}
 	
 	func test_tappingCodeModalButton_shouldPresentCodeNextViewController() {
-		let presentationVerifier = PresentationVerifier()
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let sut: ViewController = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
-		sut.loadViewIfNeeded()
 		UIApplication.shared.windows.first?.rootViewController = sut
 		sut.codeModalButton.tap()
 		let codeNextVC: CodeNextViewController? = presentationVerifier.verify(
@@ -57,7 +58,31 @@ class ViewControllerTests: XCTestCase {
 		XCTAssertEqual(codeNextVC?.label.text, "Modal from code")
 	}
 	
+	func test_tappingSeguePushButton_shouldShowSegueNextViewController() {
+		sut.putInWindow()
+		sut.seguePushButton.tap()
+		let segueNextVC: SegueNextViewController? = presentationVerifier.verify(
+			animated: true,
+			presentingViewController: sut
+		)
+		XCTAssertEqual(segueNextVC?.label.text, "Pushed from segue")
+	}
 	
+	func test_tappingSegueModalButton_shouldShowSegueNextViewController() {
+		sut.segueModalButton.tap()
+		let segueNextVC: SegueNextViewController? = presentationVerifier.verify(
+			animated: true,
+			presentingViewController: sut
+		)
+		XCTAssertEqual(segueNextVC?.label.text, "Modal from segue")
+	}
+	
+	override func tearDown() {
+		executeRunLoop()
+		sut = nil
+		presentationVerifier = nil
+		super.tearDown()
+	}
 	
 	// We can't use this for a view controller that comes from a storyboard
 //	private class TestableViewController: ViewController {

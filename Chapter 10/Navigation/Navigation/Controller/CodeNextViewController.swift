@@ -22,7 +22,7 @@ class CodeNextViewController: UIViewController {
 	}
 	
 	deinit {
-		print(">> \(String(describing: self)) deinit")
+		print(">> CodeNextViewController deinit")
 	}
 	
     override func viewDidLoad() {

@@ -160,8 +160,8 @@
 			children = (
 				63DA8FEE251E1A270080B5A6 /* ViewControllerPresentationSpy.framework */,
 				63DA8FE4251E13D80080B5A6 /* ViewControllerTests.swift */,
-				63DA8FD2251E0C7F0080B5A6 /* Info.plist */,
 				63DA8FE8251E14030080B5A6 /* TestHelpers.swift */,
+				63DA8FD2251E0C7F0080B5A6 /* Info.plist */,
 			);
 			path = NavigationTests;
 			sourceTree = "<group>";
