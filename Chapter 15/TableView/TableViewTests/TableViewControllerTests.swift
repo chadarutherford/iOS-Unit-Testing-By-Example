@@ -43,6 +43,10 @@ class TableViewControllerTests: XCTestCase {
 		XCTAssertEqual(cell?.textLabel?.text, "Three")
 	}
 	
+	func test_didSelectRow_withRow1() {
+		didSelectRow(in: sut.tableView, row: 1)
+	}
+	
 	override func tearDown() {
 		sut = nil
 		super.tearDown()
