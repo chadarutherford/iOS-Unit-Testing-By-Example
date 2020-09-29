@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mm9-o0-e9Q">
+                                <rect key="frame" x="133" y="431" width="148" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="v4L-s6-2b6"/>
+                                </constraints>
+                                <state key="normal" title="Change My Password"/>
+                                <connections>
+                                    <segue destination="CvA-jC-a3o" kind="presentation" id="x4f-Ly-f9w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mm9-o0-e9Q" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4ak-XT-ss4"/>
+                            <constraint firstItem="mm9-o0-e9Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jdB-Em-Dem"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="70D-XO-IgA">
+            <objects>
+                <viewController id="CvA-jC-a3o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XvL-rU-TfS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dL7-3l-LPe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Change Password " id="u5U-BT-yzR">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ria-kZ-ZAF"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUe-TA-vO8">
+                                <rect key="frame" x="20" y="76" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="smy-A9-0Ni"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ner-jE-QL2">
+                                <rect key="frame" x="20" y="128" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hUT-Cc-Huz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="new-password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gb8-K3-wUE">
+                                <rect key="frame" x="20" y="180" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LND-o8-OD7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="new-password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYK-02-2FE">
+                                <rect key="frame" x="20" y="240" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PpI-us-1l3"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Odp-0V-bya"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Odp-0V-bya" firstAttribute="trailing" secondItem="gb8-K3-wUE" secondAttribute="trailing" constant="20" id="1Bg-e6-lQE"/>
+                            <constraint firstItem="dL7-3l-LPe" firstAttribute="leading" secondItem="Odp-0V-bya" secondAttribute="leading" id="5DN-4e-x4O"/>
+                            <constraint firstItem="xUe-TA-vO8" firstAttribute="leading" secondItem="Odp-0V-bya" secondAttribute="leading" constant="20" id="9l2-dh-eui"/>
+                            <constraint firstItem="xUe-TA-vO8" firstAttribute="top" secondItem="dL7-3l-LPe" secondAttribute="bottom" constant="20" id="Bae-RA-0rq"/>
+                            <constraint firstItem="Odp-0V-bya" firstAttribute="trailing" secondItem="dL7-3l-LPe" secondAttribute="trailing" id="FCI-vt-ktW"/>
+                            <constraint firstItem="ner-jE-QL2" firstAttribute="leading" secondItem="Odp-0V-bya" secondAttribute="leading" constant="20" id="Iqt-8J-Vy2"/>
+                            <constraint firstItem="Odp-0V-bya" firstAttribute="trailing" secondItem="WYK-02-2FE" secondAttribute="trailing" constant="20" id="MHF-1j-snS"/>
+                            <constraint firstItem="WYK-02-2FE" firstAttribute="top" secondItem="gb8-K3-wUE" secondAttribute="bottom" constant="16" id="Oak-dx-rF0"/>
+                            <constraint firstItem="ner-jE-QL2" firstAttribute="top" secondItem="xUe-TA-vO8" secondAttribute="bottom" constant="8" id="Qf0-TH-FTn"/>
+                            <constraint firstItem="gb8-K3-wUE" firstAttribute="top" secondItem="ner-jE-QL2" secondAttribute="bottom" constant="8" id="TaG-TC-ISq"/>
+                            <constraint firstItem="Odp-0V-bya" firstAttribute="trailing" secondItem="ner-jE-QL2" secondAttribute="trailing" constant="20" id="ZWv-ip-qQy"/>
+                            <constraint firstItem="gb8-K3-wUE" firstAttribute="leading" secondItem="Odp-0V-bya" secondAttribute="leading" constant="20" id="dAO-Tf-GOa"/>
+                            <constraint firstItem="dL7-3l-LPe" firstAttribute="top" secondItem="Odp-0V-bya" secondAttribute="top" id="igj-DD-BwM"/>
+                            <constraint firstItem="Odp-0V-bya" firstAttribute="trailing" secondItem="xUe-TA-vO8" secondAttribute="trailing" constant="20" id="lQc-OM-8Rb"/>
+                            <constraint firstItem="WYK-02-2FE" firstAttribute="leading" secondItem="Odp-0V-bya" secondAttribute="leading" constant="20" id="mW6-ql-vtD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPR-ab-OWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
