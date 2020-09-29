@@ -16,11 +16,31 @@ class TableViewControllerTests: XCTestCase {
 		super.setUp()
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		sut = storyboard.instantiateViewController(identifier: String(describing: TableViewController.self))
+		sut.loadViewIfNeeded()
 	}
 	
 	func test_tableViewDelegates_shouldBeConnected() {
 		XCTAssertNotNil(sut.tableView.dataSource, "dataSource")
 		XCTAssertNotNil(sut.tableView.delegate, "delegate")
+	}
+	
+	func test_numberOfRows_shouldBe3() {
+		XCTAssertEqual(numberOfRows(in: sut.tableView), 3)
+	}
+	
+	func test_cellForRowAt_withRow0_shouldSetCellLabelToOne() {
+		let cell = cellForRow(in: sut.tableView, row: 0)
+		XCTAssertEqual(cell?.textLabel?.text, "One")
+	}
+	
+	func test_cellForRowAt_withRow1_shouldSetCellLabelToTwo() {
+		let cell = cellForRow(in: sut.tableView, row: 1)
+		XCTAssertEqual(cell?.textLabel?.text, "Two")
+	}
+	
+	func test_cellForRowAt_withRow2_shouldSetCellLabelToThree() {
+		let cell = cellForRow(in: sut.tableView, row: 2)
+		XCTAssertEqual(cell?.textLabel?.text, "Three")
 	}
 	
 	override func tearDown() {
