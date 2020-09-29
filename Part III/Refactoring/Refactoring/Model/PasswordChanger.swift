@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PasswordChanger {
+final class PasswordChanger: PasswordChanging {
 	private static var pretendToSucceed = false
 	private var successOrFailureTimer: SuccessOrFailureTimer?
 	
