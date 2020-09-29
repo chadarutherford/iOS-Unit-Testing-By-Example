@@ -13,6 +13,7 @@
 		63CEEC712523A99600AEE021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CEEC6F2523A99600AEE021 /* Main.storyboard */; };
 		63CEEC732523A99700AEE021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CEEC722523A99700AEE021 /* Assets.xcassets */; };
 		63CEEC762523A99700AEE021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CEEC742523A99700AEE021 /* LaunchScreen.storyboard */; };
+		63CEEC9B2523ABC500AEE021 /* PasswordChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEEC9A2523ABC500AEE021 /* PasswordChanger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		63CEEC772523A99700AEE021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63CEEC822523A9AE00AEE021 /* RefactoringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactoringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CEEC862523A9AE00AEE021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63CEEC9A2523ABC500AEE021 /* PasswordChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChanger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		63CEEC682523A99600AEE021 /* Refactoring */ = {
 			isa = PBXGroup;
 			children = (
+				63CEEC992523ABB500AEE021 /* Model */,
 				63CEEC952523A9D800AEE021 /* View */,
 				63CEEC942523A9D000AEE021 /* Controller */,
 				63CEEC902523A9B900AEE021 /* Support */,
@@ -134,6 +137,14 @@
 				63CEEC742523A99700AEE021 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		63CEEC992523ABB500AEE021 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63CEEC9A2523ABC500AEE021 /* PasswordChanger.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				63CEEC6E2523A99600AEE021 /* ViewController.swift in Sources */,
 				63CEEC6A2523A99600AEE021 /* AppDelegate.swift in Sources */,
 				63CEEC6C2523A99600AEE021 /* SceneDelegate.swift in Sources */,
+				63CEEC9B2523ABC500AEE021 /* PasswordChanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
