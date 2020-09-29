@@ -14,6 +14,7 @@
 		63CEEC732523A99700AEE021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CEEC722523A99700AEE021 /* Assets.xcassets */; };
 		63CEEC762523A99700AEE021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CEEC742523A99700AEE021 /* LaunchScreen.storyboard */; };
 		63CEEC9B2523ABC500AEE021 /* PasswordChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEEC9A2523ABC500AEE021 /* PasswordChanger.swift */; };
+		63CEECA12523ADF900AEE021 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEECA02523ADF900AEE021 /* ChangePasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		63CEEC822523A9AE00AEE021 /* RefactoringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactoringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CEEC862523A9AE00AEE021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63CEEC9A2523ABC500AEE021 /* PasswordChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChanger.swift; sourceTree = "<group>"; };
+		63CEECA02523ADF900AEE021 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				63CEEC6D2523A99600AEE021 /* ViewController.swift */,
+				63CEECA02523ADF900AEE021 /* ChangePasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 					};
 					63CEEC812523A9AE00AEE021 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 63CEEC652523A99600AEE021;
 					};
 				};
@@ -250,6 +254,7 @@
 				63CEEC6E2523A99600AEE021 /* ViewController.swift in Sources */,
 				63CEEC6A2523A99600AEE021 /* AppDelegate.swift in Sources */,
 				63CEEC6C2523A99600AEE021 /* SceneDelegate.swift in Sources */,
+				63CEECA12523ADF900AEE021 /* ChangePasswordViewController.swift in Sources */,
 				63CEEC9B2523ABC500AEE021 /* PasswordChanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
-				INFOPLIST_FILE = Refactoring/Info.plist;
+				INFOPLIST_FILE = Refactoring/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,7 +438,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
-				INFOPLIST_FILE = Refactoring/Info.plist;
+				INFOPLIST_FILE = Refactoring/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = RefactoringTests/Info.plist;
@@ -459,6 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.RefactoringTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Refactoring.app/Refactoring";
@@ -469,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = RefactoringTests/Info.plist;

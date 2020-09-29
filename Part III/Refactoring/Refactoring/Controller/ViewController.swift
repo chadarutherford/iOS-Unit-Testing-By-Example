@@ -8,12 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+	
+	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+	// MARK: - View Controller Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 	}
-
-
+	
+	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+	// MARK: - Navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		switch segue.identifier {
+		case "changePassword":
+			let changePasswordVC = segue.destination as? ChangePasswordViewController
+			changePasswordVC?.securityToken = "TOKEN"
+		default:
+			break
+		}
+	}
 }
-

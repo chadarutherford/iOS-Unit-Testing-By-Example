@@ -23,7 +23,7 @@
                                 </constraints>
                                 <state key="normal" title="Change My Password"/>
                                 <connections>
-                                    <segue destination="CvA-jC-a3o" kind="presentation" id="x4f-Ly-f9w"/>
+                                    <segue destination="CvA-jC-a3o" kind="presentation" identifier="changePassword" id="x4f-Ly-f9w"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Password View Controller-->
         <scene sceneID="70D-XO-IgA">
             <objects>
-                <viewController id="CvA-jC-a3o" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="CvA-jC-a3o" customClass="ChangePasswordViewController" customModule="Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XvL-rU-TfS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Change Password " id="u5U-BT-yzR">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ria-kZ-ZAF"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ria-kZ-ZAF">
+                                            <connections>
+                                                <action selector="cancel" destination="CvA-jC-a3o" id="Jhx-vn-nUO"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -62,6 +66,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CvA-jC-a3o" id="8mL-oq-teg"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ner-jE-QL2">
                                 <rect key="frame" x="20" y="128" width="374" height="44"/>
@@ -70,6 +77,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="new-password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CvA-jC-a3o" id="UEa-6N-m3L"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gb8-K3-wUE">
                                 <rect key="frame" x="20" y="180" width="374" height="44"/>
@@ -78,6 +88,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="new-password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CvA-jC-a3o" id="ALO-MC-QEl"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYK-02-2FE">
                                 <rect key="frame" x="20" y="240" width="374" height="44"/>
@@ -85,6 +98,9 @@
                                     <constraint firstAttribute="height" constant="44" id="PpI-us-1l3"/>
                                 </constraints>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="changePassword" destination="CvA-jC-a3o" eventType="touchUpInside" id="BeR-o4-oss"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Odp-0V-bya"/>
@@ -107,10 +123,17 @@
                             <constraint firstItem="WYK-02-2FE" firstAttribute="leading" secondItem="Odp-0V-bya" secondAttribute="leading" constant="20" id="mW6-ql-vtD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelBarButton" destination="Ria-kZ-ZAF" id="2dK-GQ-IW5"/>
+                        <outlet property="confirmPasswordTextField" destination="gb8-K3-wUE" id="dDy-pp-VBf"/>
+                        <outlet property="newPasswordTextField" destination="ner-jE-QL2" id="onT-Rc-F6d"/>
+                        <outlet property="oldPasswordTextField" destination="xUe-TA-vO8" id="1se-QP-uBL"/>
+                        <outlet property="submitButton" destination="WYK-02-2FE" id="Rxs-DF-oYd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPR-ab-OWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="899" y="142"/>
+            <point key="canvasLocation" x="894" y="144"/>
         </scene>
     </scenes>
     <resources>
