@@ -13,6 +13,7 @@
 		63FF05B225238C35008B8632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FF05B125238C35008B8632 /* Assets.xcassets */; };
 		63FF05B525238C35008B8632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FF05B325238C35008B8632 /* LaunchScreen.storyboard */; };
 		63FF05DA25238CF9008B8632 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF05D925238CF9008B8632 /* TableViewController.swift */; };
+		63FF05E025238E8D008B8632 /* TableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF05DF25238E8D008B8632 /* TableViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		63FF05C125238C5A008B8632 /* TableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FF05C525238C5A008B8632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FF05D925238CF9008B8632 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		63FF05DF25238E8D008B8632 /* TableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		63FF05C225238C5A008B8632 /* TableViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				63FF05DF25238E8D008B8632 /* TableViewControllerTests.swift */,
 				63FF05C525238C5A008B8632 /* Info.plist */,
 			);
 			path = TableViewTests;
@@ -188,6 +191,7 @@
 					};
 					63FF05C025238C5A008B8632 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = 63FF05A425238C34008B8632;
 					};
 				};
@@ -246,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FF05E025238E8D008B8632 /* TableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = TableViewTests/Info.plist;
@@ -447,6 +453,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.TableViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableView.app/TableView";
@@ -457,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = TableViewTests/Info.plist;
