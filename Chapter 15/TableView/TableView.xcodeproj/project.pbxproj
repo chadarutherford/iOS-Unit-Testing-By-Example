@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		63FF05A925238C34008B8632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF05A825238C34008B8632 /* AppDelegate.swift */; };
 		63FF05AB25238C34008B8632 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF05AA25238C34008B8632 /* SceneDelegate.swift */; };
-		63FF05AD25238C34008B8632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF05AC25238C34008B8632 /* ViewController.swift */; };
 		63FF05B025238C34008B8632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FF05AE25238C34008B8632 /* Main.storyboard */; };
 		63FF05B225238C35008B8632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FF05B125238C35008B8632 /* Assets.xcassets */; };
 		63FF05B525238C35008B8632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FF05B325238C35008B8632 /* LaunchScreen.storyboard */; };
+		63FF05DA25238CF9008B8632 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF05D925238CF9008B8632 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		63FF05A525238C34008B8632 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FF05A825238C34008B8632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FF05AA25238C34008B8632 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63FF05AC25238C34008B8632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63FF05AF25238C34008B8632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63FF05B125238C35008B8632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FF05B425238C35008B8632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63FF05B625238C35008B8632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63FF05C125238C5A008B8632 /* TableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FF05C525238C5A008B8632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63FF05D925238CF9008B8632 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 		63FF05D425238C98008B8632 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				63FF05AC25238C34008B8632 /* ViewController.swift */,
+				63FF05D925238CF9008B8632 /* TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,9 +236,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FF05AD25238C34008B8632 /* ViewController.swift in Sources */,
 				63FF05A925238C34008B8632 /* AppDelegate.swift in Sources */,
 				63FF05AB25238C34008B8632 /* SceneDelegate.swift in Sources */,
+				63FF05DA25238CF9008B8632 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
