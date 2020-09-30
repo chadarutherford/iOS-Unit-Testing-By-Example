@@ -19,7 +19,17 @@ struct ChangePasswordViewModel {
 	let confirmPasswordPlaceholder = "Confirm New Password"
 	let submitButtonLabel = "Submit"
 	var isCancelButtonEnabled = true
+	var isBlurViewShowing = false
+	var isActivityIndicatorShowing = false
 	var inputFocus: InputFocus = .noKeyboard
+	var isOldPasswordEmpty: Bool { oldPassword.isEmpty }
+	var isNewPasswordEmpty: Bool { newPassword.isEmpty }
+	var isNewPasswordTooShort: Bool { newPassword.count < 6 }
+	var isConfirmPasswordMismatched: Bool { newPassword != confirmPassword }
+	
+	var oldPassword = ""
+	var newPassword = ""
+	var confirmPassword = ""
 	
 	enum InputFocus {
 		case noKeyboard
