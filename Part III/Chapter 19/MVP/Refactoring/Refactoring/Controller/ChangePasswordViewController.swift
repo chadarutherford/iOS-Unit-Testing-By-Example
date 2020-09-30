@@ -26,14 +26,7 @@ class ChangePasswordViewController: UIViewController {
 	private(set) var activityIndicator = UIActivityIndicatorView(style: .large)
 	private lazy var presenter = ChangePasswordPresenter(view: self, viewModel: viewModel)
 	
-	var viewModel: ChangePasswordViewModel! {
-		didSet {
-			guard isViewLoaded else { return }
-			if oldValue.inputFocus != viewModel.inputFocus {
-				updateInputFocus()
-			}
-		}
-	}
+	var viewModel: ChangePasswordViewModel!
 	
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - View Controller Life Cycle
@@ -51,7 +44,7 @@ class ChangePasswordViewController: UIViewController {
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - Actions
 	@IBAction private func cancel() {
-		viewModel.inputFocus = .noKeyboard
+		updateInputFocus(.noKeyboard)
 		dismissModal()
 	}
 	
@@ -65,13 +58,13 @@ class ChangePasswordViewController: UIViewController {
 	private func validateInputs() -> Bool {
 		
 		if viewModel.isOldPasswordEmpty {
-			viewModel.inputFocus = .oldPassword
+			updateInputFocus(.oldPassword)
 			return false
 		}
 		
 		if viewModel.isNewPasswordEmpty {
 			showAlert(message: viewModel.enterNewPasswordMessage) { [weak self] in
-				self?.viewModel.inputFocus = .newPassword
+				self?.updateInputFocus(.newPassword)
 			}
 			return false
 		}
@@ -95,10 +88,10 @@ class ChangePasswordViewController: UIViewController {
 	private func resetNewPasswords() {
 		newPasswordTextField.text = ""
 		confirmPasswordTextField.text = ""
-		viewModel.inputFocus = .newPassword
+		updateInputFocus(.newPassword)
 	}
 	private func setUpWaitingAppearance() {
-		viewModel.inputFocus = .noKeyboard
+		updateInputFocus(.noKeyboard)
 		setCancelButtonEnabled(false)
 		showBlurView()
 		showActivityIndicator()
@@ -126,7 +119,7 @@ class ChangePasswordViewController: UIViewController {
 		oldPasswordTextField.text = ""
 		newPasswordTextField.text = ""
 		confirmPasswordTextField.text = ""
-		viewModel.inputFocus = .oldPassword
+		updateInputFocus(.oldPassword)
 		hideBlurView()
 		setCancelButtonEnabled(true)
 	}
@@ -141,19 +134,6 @@ class ChangePasswordViewController: UIViewController {
 		submitButton.setTitle(viewModel.submitButtonLabel, for: .normal)
 	}
 	
-	private func updateInputFocus() {
-		switch viewModel.inputFocus {
-		case .noKeyboard:
-			view.endEditing(true)
-		case .oldPassword:
-			oldPasswordTextField.becomeFirstResponder()
-		case .newPassword:
-			newPasswordTextField.becomeFirstResponder()
-		case .confirmPassword:
-			confirmPasswordTextField.becomeFirstResponder()
-		}
-	}
-	
 	private func updateViewModelTextFields() {
 		viewModel.oldPassword = oldPasswordTextField.text ?? ""
 		viewModel.newPassword = newPasswordTextField.text ?? ""
@@ -166,9 +146,9 @@ class ChangePasswordViewController: UIViewController {
 extension ChangePasswordViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		if textField == oldPasswordTextField {
-			viewModel.inputFocus = .newPassword
+			updateInputFocus(.newPassword)
 		} else if textField == newPasswordTextField {
-			viewModel.inputFocus = .confirmPassword
+			updateInputFocus(.confirmPassword)
 		} else if textField == confirmPasswordTextField {
 			changePassword()
 		}
@@ -211,6 +191,19 @@ extension ChangePasswordViewController: ChangePasswordViewCommands {
 	
 	func setCancelButtonEnabled(_ enabled: Bool) {
 		cancelBarButton.isEnabled = enabled
+	}
+	
+	func updateInputFocus(_ inputFocus: InputFocus) {
+		switch inputFocus {
+		case .noKeyboard:
+			view.endEditing(true)
+		case .oldPassword:
+			oldPasswordTextField.becomeFirstResponder()
+		case .newPassword:
+			newPasswordTextField.becomeFirstResponder()
+		case .confirmPassword:
+			confirmPasswordTextField.becomeFirstResponder()
+		}
 	}
 	
 	private func showAlert(message: String, okAction: @escaping (UIAlertAction) -> Void) {

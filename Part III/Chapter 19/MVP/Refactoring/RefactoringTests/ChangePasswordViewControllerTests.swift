@@ -412,9 +412,9 @@ final class ChangePasswordViewControllerTests: XCTestCase {
 		super.tearDown()
 	}
 	
-	private func putFocusOn(_ inputFocus: ChangePasswordViewModel.InputFocus) {
+	private func putFocusOn(_ inputFocus: InputFocus) {
 		putInViewHeirarachy(sut)
-		sut.viewModel.inputFocus = inputFocus
+		sut.updateInputFocus(inputFocus)
 	}
 	
 	private func showPasswordChangeFailureAlert() {
