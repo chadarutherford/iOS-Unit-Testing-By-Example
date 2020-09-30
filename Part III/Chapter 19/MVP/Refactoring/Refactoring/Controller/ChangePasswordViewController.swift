@@ -48,45 +48,16 @@ class ChangePasswordViewController: UIViewController {
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - Actions
 	@IBAction private func cancel() {
-		updateInputFocus(.noKeyboard)
-		dismissModal()
+		presenter.cancel()
 	}
 	
 	@IBAction private func changePassword() {
-		updateViewModelTextFields()
-		guard validateInputs() else { return }
-		presenter.setUpWaitingAppearance()
-		presenter.attemptToChangePassword()
-	}
-	
-	private func validateInputs() -> Bool {
-		
-		if viewModel.isOldPasswordEmpty {
-			updateInputFocus(.oldPassword)
-			return false
-		}
-		
-		if viewModel.isNewPasswordEmpty {
-			showAlert(message: viewModel.enterNewPasswordMessage) { [weak self] in
-				self?.updateInputFocus(.newPassword)
-			}
-			return false
-		}
-		
-		if viewModel.isNewPasswordTooShort {
-			showAlert(message: viewModel.newPasswordTooShortMessage) { [weak self] in
-				self?.presenter.resetNewPasswords()
-			}
-			return false
-		}
-		
-		if viewModel.isConfirmPasswordMismatched {
-			showAlert(message: viewModel.confirmationPasswordDoesNotMatchMessage) { [weak self] in
-				self?.presenter.resetNewPasswords()
-			}
-			return false
-		}
-		return true
+		let passwordInputs = PasswordInputs(
+			oldPassword: oldPasswordTextField.text ?? "",
+			newPassword: newPasswordTextField.text ?? "",
+			confirmPassword: confirmPasswordTextField.text ?? ""
+		)
+		presenter.changePassword(passwordInputs: passwordInputs)
 	}
 	
 	private func setLabels() {
@@ -96,14 +67,6 @@ class ChangePasswordViewController: UIViewController {
 		confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
 		submitButton.setTitle(viewModel.submitButtonLabel, for: .normal)
 	}
-	
-	private func updateViewModelTextFields() {
-		viewModel.oldPassword = oldPasswordTextField.text ?? ""
-		viewModel.newPassword = newPasswordTextField.text ?? ""
-		viewModel.confirmPassword = confirmPasswordTextField.text ?? ""
-	}
-	
-	
 }
 
 extension ChangePasswordViewController: UITextFieldDelegate {

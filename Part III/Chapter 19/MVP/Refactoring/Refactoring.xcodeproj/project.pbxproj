@@ -13,6 +13,7 @@
 		634DD4B02524FEDF004F2E8C /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634DD4AF2524FEDF004F2E8C /* ChangePasswordViewModel.swift */; };
 		6359287E252525D40045BA28 /* ChangePasswordViewCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359287D252525D40045BA28 /* ChangePasswordViewCommands.swift */; };
 		63592883252526240045BA28 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63592882252526240045BA28 /* ChangePasswordPresenter.swift */; };
+		635928892525448B0045BA28 /* PasswordInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635928882525448B0045BA28 /* PasswordInputs.swift */; };
 		63CEEC6A2523A99600AEE021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEEC692523A99600AEE021 /* AppDelegate.swift */; };
 		63CEEC6C2523A99600AEE021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEEC6B2523A99600AEE021 /* SceneDelegate.swift */; };
 		63CEEC6E2523A99600AEE021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEEC6D2523A99600AEE021 /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		634DD4AF2524FEDF004F2E8C /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		6359287D252525D40045BA28 /* ChangePasswordViewCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewCommands.swift; sourceTree = "<group>"; };
 		63592882252526240045BA28 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		635928882525448B0045BA28 /* PasswordInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputs.swift; sourceTree = "<group>"; };
 		63CEEC662523A99600AEE021 /* Refactoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Refactoring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CEEC692523A99600AEE021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CEEC6B2523A99600AEE021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				63CEEC9A2523ABC500AEE021 /* PasswordChanger.swift */,
+				635928882525448B0045BA28 /* PasswordInputs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				6359287E252525D40045BA28 /* ChangePasswordViewCommands.swift in Sources */,
 				63CEEC6C2523A99600AEE021 /* SceneDelegate.swift in Sources */,
 				63CEECA12523ADF900AEE021 /* ChangePasswordViewController.swift in Sources */,
+				635928892525448B0045BA28 /* PasswordInputs.swift in Sources */,
 				634DD4B02524FEDF004F2E8C /* ChangePasswordViewModel.swift in Sources */,
 				63592883252526240045BA28 /* ChangePasswordPresenter.swift in Sources */,
 				63CEEC9B2523ABC500AEE021 /* PasswordChanger.swift in Sources */,

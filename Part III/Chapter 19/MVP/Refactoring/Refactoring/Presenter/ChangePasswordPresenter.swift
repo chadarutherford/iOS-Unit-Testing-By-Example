@@ -32,6 +32,17 @@ class ChangePasswordPresenter {
 		}
 	}
 	
+	func cancel() {
+		view.updateInputFocus(.noKeyboard)
+		view.dismissModal()
+	}
+	
+	func changePassword(passwordInputs: PasswordInputs) {
+		guard validateInputs(passwordInputs: passwordInputs) else { return }
+		setUpWaitingAppearance()
+		attemptToChangePassword(passwordInputs: passwordInputs)
+	}
+	
 	private func startOver() {
 		view.clearAllPasswordFields()
 		view.updateInputFocus(.oldPassword)
@@ -46,18 +57,18 @@ class ChangePasswordPresenter {
 		}
 	}
 	
-	func attemptToChangePassword() {
+	private func attemptToChangePassword(passwordInputs: PasswordInputs) {
 		passwordChanger.change(
 			securityToken: securityToken,
-			oldPassword: viewModel.oldPassword,
-			newPassword: viewModel.newPassword) { [weak self] in
+			oldPassword: passwordInputs.oldPassword,
+			newPassword: passwordInputs.newPassword) { [weak self] in
 			self?.handleSuccess()
 		} onFailure: { [weak self] message in
 			self?.handleFailure(with: message)
 		}
 	}
 	
-	func setUpWaitingAppearance() {
+	private func setUpWaitingAppearance() {
 		view.updateInputFocus(.noKeyboard)
 		view.setCancelButtonEnabled(false)
 		view.showBlurView()
@@ -67,5 +78,34 @@ class ChangePasswordPresenter {
 	func resetNewPasswords() {
 		view.clearNewPasswordFields()
 		view.updateInputFocus(.newPassword)
+	}
+	
+	private func validateInputs(passwordInputs: PasswordInputs) -> Bool {
+		if passwordInputs.isOldPasswordEmpty {
+			view.updateInputFocus(.oldPassword)
+			return false
+		}
+		
+		if passwordInputs.isNewPasswordEmpty {
+			view.showAlert(message: viewModel.enterNewPasswordMessage) { [weak self] in
+				self?.view.updateInputFocus(.newPassword)
+			}
+			return false
+		}
+		
+		if passwordInputs.isNewPasswordTooShort {
+			view.showAlert(message: viewModel.newPasswordTooShortMessage) { [weak self] in
+				self?.resetNewPasswords()
+			}
+			return false
+		}
+		
+		if passwordInputs.isConfirmPasswordMismatched {
+			view.showAlert(message: viewModel.confirmationPasswordDoesNotMatchMessage) { [weak self] in
+				self?.resetNewPasswords()
+			}
+			return false
+		}
+		return true
 	}
 }
