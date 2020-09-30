@@ -118,3 +118,8 @@ extension UIBarButtonItem.SystemItem: CustomStringConvertible {
 		}
 	}
 }
+
+@discardableResult
+func shouldReturn(in textField: UITextField) -> Bool? {
+	textField.delegate?.textFieldShouldReturn?(textField)
+}

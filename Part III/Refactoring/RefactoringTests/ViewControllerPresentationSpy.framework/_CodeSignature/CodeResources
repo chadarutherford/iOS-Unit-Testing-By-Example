@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/ViewControllerPresentationSpy-Swift.h</key>
 		<data>
-		W9uGFAACyCnvkOXbd16CrmvZnwc=
+		hvoat8sj8KVWc5xXn6jRYFBnR/Y=
 		</data>
 		<key>Headers/ViewControllerPresentationSpy.h</key>
 		<data>
@@ -32,6 +32,14 @@
 		<data>
 		8vobHHb2UzfHYLH5s7AQrBRQVJI=
 		</data>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		thguj/D0gvPfv5EcWeinTcMoZHc=
+		</data>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		thguj/D0gvPfv5EcWeinTcMoZHc=
+		</data>
 		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
 		5L7THTFSZZLzEsr2oPsVafpBdKg=
@@ -39,6 +47,22 @@
 		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
 		5L7THTFSZZLzEsr2oPsVafpBdKg=
+		</data>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		ukikkzLEAu2klNWUKo9uzdv0OBY=
+		</data>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		uFy+J/gyNiSuZexOWho2qRlARsU=
+		</data>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		ukikkzLEAu2klNWUKo9uzdv0OBY=
+		</data>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		uFy+J/gyNiSuZexOWho2qRlARsU=
 		</data>
 		<key>Modules/ViewControllerPresentationSpy.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -99,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/Mwwu6SbnQ9pBM1dQzyrb86A4PCk8k7s+FBcJtVC09k=
+			L8p02RMmNPVvJNyBlohTZb79nqGYXoOhB4/NHlL0qA8=
 			</data>
 		</dict>
 		<key>Headers/ViewControllerPresentationSpy.h</key>
@@ -107,6 +131,20 @@
 			<key>hash2</key>
 			<data>
 			/Ea1G9KIHrc16CravhO9UuZ0CZxOz4ElNLibK80CXew=
+			</data>
+		</dict>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yk7G1jj5/ZNV/Uc6cLxJl9hA6D+vT354AYzFS78ZVcc=
+			</data>
+		</dict>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yk7G1jj5/ZNV/Uc6cLxJl9hA6D+vT354AYzFS78ZVcc=
 			</data>
 		</dict>
 		<key>Modules/ViewControllerPresentationSpy.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
@@ -121,6 +159,34 @@
 			<key>hash2</key>
 			<data>
 			gsNFrQJQ9fjfVU9qy1XuG/+NYHMuX6xeIMliEiQv/hI=
+			</data>
+		</dict>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gr7xkiahQEEINQ+tmjQyKZx8jUVBWGEcMBwpGpRBnrg=
+			</data>
+		</dict>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hUGctsU7IwdmZebIOW5dsTFQYMC8Irj2ODd4E2af5wE=
+			</data>
+		</dict>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gr7xkiahQEEINQ+tmjQyKZx8jUVBWGEcMBwpGpRBnrg=
+			</data>
+		</dict>
+		<key>Modules/ViewControllerPresentationSpy.swiftmodule/arm64.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hUGctsU7IwdmZebIOW5dsTFQYMC8Irj2ODd4E2af5wE=
 			</data>
 		</dict>
 		<key>Modules/ViewControllerPresentationSpy.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>

@@ -317,6 +317,92 @@ final class ChangePasswordViewControllerTests: XCTestCase {
 		verifyAlertPresented(message: "MESSAGE")
 	}
 	
+	func test_tappingOKInFailureAlert_shouldClearAllFieldsToStartOver() throws {
+		showPasswordChangeFailureAlert()
+		try alertVerifier.executeAction(forButton: "OK")
+		XCTAssertEqual(sut.oldPasswordTextField.text?.isEmpty, true, "old")
+		XCTAssertEqual(sut.newPasswordTextField.text?.isEmpty, true, "new")
+		XCTAssertEqual(sut.confirmPasswordTextField.text?.isEmpty, true, "confirmation")
+	}
+	
+	func test_tappingOKInFailureAlert_shouldPutFocusOnOldPassword() throws {
+		showPasswordChangeFailureAlert()
+		putInViewHeirarachy(sut)
+		try alertVerifier.executeAction(forButton: "OK")
+		XCTAssertTrue(sut.oldPasswordTextField.isFirstResponder)
+	}
+	
+	func test_tappingOKInFailureAlert_shouldSetBackgroundBackToWhite() throws {
+		showPasswordChangeFailureAlert()
+		XCTAssertNotEqual(sut.view.backgroundColor, .white, "precondition")
+		try alertVerifier.executeAction(forButton: "OK")
+		XCTAssertEqual(sut.view.backgroundColor, .white)
+	}
+	
+	func test_tappingOKInFailureAlert_shouldHideBlur() throws {
+		showPasswordChangeFailureAlert()
+		XCTAssertNotNil(sut.blurView.superview, "precondition")
+		try alertVerifier.executeAction(forButton: "OK")
+		XCTAssertNil(sut.blurView.superview)
+	}
+	
+	func test_tappingOKInFailureAlert_shouldEnableCancelBarButton() throws {
+		showPasswordChangeFailureAlert()
+		XCTAssertFalse(sut.cancelBarButton.isEnabled, "precondition")
+		try alertVerifier.executeAction(forButton: "OK")
+		XCTAssertTrue(sut.cancelBarButton.isEnabled)
+	}
+	
+	func test_tappingOKInFailureAlert_shouldNotDismissModal() throws {
+		showPasswordChangeFailureAlert()
+		let dismissalVerifier = DismissalVerifier()
+		try alertVerifier.executeAction(forButton: "OK")
+		XCTAssertEqual(dismissalVerifier.dismissedCount, 0)
+	}
+	
+	func test_textFieldDelegates_shouldBeConnected() {
+		XCTAssertNotNil(sut.oldPasswordTextField.delegate, "oldPasswordTextField")
+		XCTAssertNotNil(sut.newPasswordTextField.delegate, "newPasswordTextField")
+		XCTAssertNotNil(sut.confirmPasswordTextField.delegate, "confirmPasswordTextField")
+	}
+	
+	func test_hittingReturnFromOldPassword_shouldPutFocusOnNewPassword() {
+		putInViewHeirarachy(sut)
+		shouldReturn(in: sut.oldPasswordTextField)
+		XCTAssertTrue(sut.newPasswordTextField.isFirstResponder)
+	}
+	
+	func test_hittingReturnFromNewPassword_shouldPutFocusOnConfirmPassword() {
+		putInViewHeirarachy(sut)
+		shouldReturn(in: sut.newPasswordTextField)
+		XCTAssertTrue(sut.confirmPasswordTextField.isFirstResponder)
+	}
+	
+	func test_hittingReturnFromConfirmPassword_shouldRequestPasswordChange() {
+		sut.securityToken = "TOKEN"
+		sut.oldPasswordTextField.text = "OLD456"
+		sut.newPasswordTextField.text = "NEW456"
+		sut.confirmPasswordTextField.text = sut.newPasswordTextField.text
+		shouldReturn(in: sut.confirmPasswordTextField)
+		passwordChanger.verifyChange(
+			securityToken: "TOKEN",
+			oldPassword: "OLD456",
+			newPassword: "NEW456"
+		)
+	}
+	
+	func test_hittingReturnFromOldPassword_shouldNotRequestPasswordChange() {
+		setupValidPasswordEntries()
+		shouldReturn(in: sut.oldPasswordTextField)
+		passwordChanger.verifyChangeNeverCalled()
+	}
+	
+	func test_hittingReturnFromNewPassword_shouldNotRequestPasswordChange() {
+		setupValidPasswordEntries()
+		shouldReturn(in: sut.newPasswordTextField)
+		passwordChanger.verifyChangeNeverCalled()
+	}
+	
 	override func tearDown() {
 		executeRunLoop()
 		sut = nil
