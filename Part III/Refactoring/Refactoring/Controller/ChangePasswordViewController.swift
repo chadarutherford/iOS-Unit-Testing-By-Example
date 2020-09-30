@@ -40,9 +40,7 @@ class ChangePasswordViewController: UIViewController {
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - Actions
 	@IBAction private func cancel() {
-		oldPasswordTextField.resignFirstResponder()
-		newPasswordTextField.resignFirstResponder()
-		confirmPasswordTextField.resignFirstResponder()
+		view.endEditing(true)
 		dismiss(animated: true)
 	}
 	
@@ -68,28 +66,27 @@ class ChangePasswordViewController: UIViewController {
 		
 		if newPasswordTextField.text?.count ?? 0 < 6 {
 			showAlert(message: "The new password should have at least 6 characters.") { [weak self] _ in
-				self?.newPasswordTextField.text = ""
-				self?.confirmPasswordTextField.text = ""
-				self?.newPasswordTextField.becomeFirstResponder()
+				self?.resetNewPasswords()
 			}
 			return false
 		}
 		
 		if newPasswordTextField.text != confirmPasswordTextField.text {
 			showAlert(message: "The new password and the confirmation password don't match. Please try again.") { [weak self] _ in
-				self?.newPasswordTextField.text = ""
-				self?.confirmPasswordTextField.text = ""
-				self?.newPasswordTextField.becomeFirstResponder()
+				self?.resetNewPasswords()
 			}
 			return false
 		}
 		return true
 	}
 	
+	private func resetNewPasswords() {
+		newPasswordTextField.text = ""
+		confirmPasswordTextField.text = ""
+		newPasswordTextField.becomeFirstResponder()
+	}
 	private func setUpWaitingAppearance() {
-		oldPasswordTextField.resignFirstResponder()
-		newPasswordTextField.resignFirstResponder()
-		confirmPasswordTextField.resignFirstResponder()
+		view.endEditing(true)
 		cancelBarButton.isEnabled = false
 		view.backgroundColor = .clear
 		view.addSubview(blurView)
@@ -108,24 +105,31 @@ class ChangePasswordViewController: UIViewController {
 			securityToken: securityToken,
 			oldPassword: oldPasswordTextField.text ?? "",
 			newPassword: newPasswordTextField.text ?? "") { [weak self] in
-			self?.activityIndicator.stopAnimating()
-			self?.activityIndicator.removeFromSuperview()
+			self?.hideSpinner()
 			self?.showAlert(message: "Your password has been successfully changed.") { [weak self] _ in
 				self?.dismiss(animated: true)
 			}
 		} onFailure: { [weak self] message in
-			self?.activityIndicator.stopAnimating()
-			self?.activityIndicator.removeFromSuperview()
+			self?.hideSpinner()
 			self?.showAlert(message: message) { [weak self] _ in
-				self?.oldPasswordTextField.text = ""
-				self?.newPasswordTextField.text = ""
-				self?.confirmPasswordTextField.text = ""
-				self?.oldPasswordTextField.becomeFirstResponder()
-				self?.view.backgroundColor = .white
-				self?.blurView.removeFromSuperview()
-				self?.cancelBarButton.isEnabled = true
+				self?.startOver()
 			}
 		}
+	}
+	
+	private func startOver() {
+		oldPasswordTextField.text = ""
+		newPasswordTextField.text = ""
+		confirmPasswordTextField.text = ""
+		oldPasswordTextField.becomeFirstResponder()
+		view.backgroundColor = .white
+		blurView.removeFromSuperview()
+		cancelBarButton.isEnabled = true
+	}
+	
+	private func hideSpinner() {
+		activityIndicator.stopAnimating()
+		activityIndicator.removeFromSuperview()
 	}
 	
 	private func showAlert(message: String, okAction: @escaping (UIAlertAction) -> Void) {
