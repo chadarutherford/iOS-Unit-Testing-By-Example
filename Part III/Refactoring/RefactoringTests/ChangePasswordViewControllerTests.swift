@@ -5,17 +5,23 @@
 //  Created by Chad Rutherford on 9/29/20.
 //
 
+import ViewControllerPresentationSpy
 import XCTest
 @testable import Refactoring
 
 final class ChangePasswordViewControllerTests: XCTestCase {
 	
 	private var sut: ChangePasswordViewController!
+	private var passwordChanger: MockPasswordChanger!
+	private var alertVerifier: AlertVerifier!
 	
 	override func setUp() {
 		super.setUp()
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		sut = storyboard.instantiateViewController(identifier: String(describing: ChangePasswordViewController.self))
+		passwordChanger = MockPasswordChanger()
+		sut.passwordChanger = passwordChanger
+		alertVerifier = AlertVerifier()
 		sut.loadViewIfNeeded()
 	}
 	
@@ -73,8 +79,45 @@ final class ChangePasswordViewControllerTests: XCTestCase {
 		XCTAssertTrue(textField.enablesReturnKeyAutomatically, "enablesReturnKeyAutomatically")
 	}
 	
+	func test_tappingCancel_withFocusOnOldPassword_shouldResignThatFocus() {
+		putFocusOn(textField: sut.oldPasswordTextField)
+		XCTAssertTrue(sut.oldPasswordTextField.isFirstResponder, "precondition")
+		tap(sut.cancelBarButton)
+		XCTAssertFalse(sut.oldPasswordTextField.isFirstResponder)
+	}
+	
+	func test_tappingCancel_withFocusOnNewPassword_shouldResignThatFocus() {
+		putFocusOn(textField: sut.newPasswordTextField)
+		XCTAssertTrue(sut.newPasswordTextField.isFirstResponder, "precondition")
+		tap(sut.cancelBarButton)
+		XCTAssertFalse(sut.newPasswordTextField.isFirstResponder)
+	}
+	
+	func test_tappingCancel_withFocusOnConfirmPassword_shouldResignThatFocus() {
+		putFocusOn(textField: sut.confirmPasswordTextField)
+		XCTAssertTrue(sut.confirmPasswordTextField.isFirstResponder, "precondition")
+		tap(sut.cancelBarButton)
+		XCTAssertFalse(sut.confirmPasswordTextField.isFirstResponder)
+	}
+	
+	func test_tappingCancel_shouldDismissModal() {
+		let dismissalVerifier = DismissalVerifier()
+		tap(sut.cancelBarButton)
+		dismissalVerifier.verify(animated: true, dismissedViewController: sut)
+	}
+	
+	
+	
 	override func tearDown() {
+		executeRunLoop()
 		sut = nil
+		passwordChanger = nil
+		alertVerifier = nil
 		super.tearDown()
+	}
+	
+	private func putFocusOn(textField: UITextField) {
+		putInViewHeirarachy(sut)
+		textField.becomeFirstResponder()
 	}
 }

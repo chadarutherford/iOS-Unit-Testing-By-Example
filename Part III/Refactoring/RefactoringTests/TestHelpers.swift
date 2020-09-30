@@ -7,6 +7,25 @@
 
 import XCTest
 
+extension UIButton {
+	func tap() {
+		self.sendActions(for: .touchUpInside)
+	}
+}
+
+func tap(_ button: UIBarButtonItem) {
+	_ = button.target?.perform(button.action, with: nil)
+}
+
+func putInViewHeirarachy(_ vc: UIViewController) {
+	let window = UIWindow()
+	window.addSubview(vc.view)
+}
+
+func executeRunLoop() {
+	RunLoop.current.run(until: Date())
+}
+
 func verifyMethodCalledOnce(
 	methodName: String,
 	callCount: Int,
