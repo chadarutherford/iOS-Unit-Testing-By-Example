@@ -22,8 +22,8 @@ class ChangePasswordViewController: UIViewController {
 	// MARK: - Properties
 	lazy var passwordChanger: PasswordChanging = PasswordChanger()
 	var securityToken = ""
-	private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-	private let activityIndicator = UIActivityIndicatorView(style: .large)
+	private(set) var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+	private(set) var activityIndicator = UIActivityIndicatorView(style: .large)
 	
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - View Controller Life Cycle
