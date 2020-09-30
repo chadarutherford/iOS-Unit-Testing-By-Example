@@ -15,6 +15,8 @@ protocol ChangePasswordViewCommands: AnyObject {
 	func dismissModal()
 	func setCancelButtonEnabled(_ enabled: Bool)
 	func updateInputFocus(_ inputFocus: InputFocus)
+	func clearAllPasswordFields()
+	func clearNewPasswordFields()
 	func showAlert(message: String, action: @escaping () -> Void)
 }
 
