@@ -18,6 +18,7 @@
 		63CEECB22523B96100AEE021 /* PasswordChanging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEECB12523B96100AEE021 /* PasswordChanging.swift */; };
 		63CEECB82523BA1200AEE021 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEECB72523BA1200AEE021 /* TestHelpers.swift */; };
 		63CEECBC2523BB6B00AEE021 /* MockPasswordChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEECBB2523BB6B00AEE021 /* MockPasswordChanger.swift */; };
+		63CEECC22523BF8400AEE021 /* ChangePasswordViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEECC12523BF8400AEE021 /* ChangePasswordViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		63CEECB12523B96100AEE021 /* PasswordChanging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChanging.swift; sourceTree = "<group>"; };
 		63CEECB72523BA1200AEE021 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		63CEECBB2523BB6B00AEE021 /* MockPasswordChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPasswordChanger.swift; sourceTree = "<group>"; };
+		63CEECC12523BF8400AEE021 /* ChangePasswordViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,10 @@
 		63CEEC832523A9AE00AEE021 /* RefactoringTests */ = {
 			isa = PBXGroup;
 			children = (
+				63CEECC12523BF8400AEE021 /* ChangePasswordViewControllerTests.swift */,
+				63CEECBB2523BB6B00AEE021 /* MockPasswordChanger.swift */,
 				63CEECB72523BA1200AEE021 /* TestHelpers.swift */,
 				63CEEC862523A9AE00AEE021 /* Info.plist */,
-				63CEECBB2523BB6B00AEE021 /* MockPasswordChanger.swift */,
 			);
 			path = RefactoringTests;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63CEECB82523BA1200AEE021 /* TestHelpers.swift in Sources */,
+				63CEECC22523BF8400AEE021 /* ChangePasswordViewControllerTests.swift in Sources */,
 				63CEECBC2523BB6B00AEE021 /* MockPasswordChanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

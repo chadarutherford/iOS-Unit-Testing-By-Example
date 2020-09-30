@@ -16,6 +16,7 @@ class ChangePasswordViewController: UIViewController {
 	@IBOutlet private(set) weak var newPasswordTextField: UITextField!
 	@IBOutlet private(set) weak var confirmPasswordTextField: UITextField!
 	@IBOutlet private(set) weak var submitButton: UIButton!
+	@IBOutlet private(set) weak var navigationBar: UINavigationBar!
 	
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - Properties

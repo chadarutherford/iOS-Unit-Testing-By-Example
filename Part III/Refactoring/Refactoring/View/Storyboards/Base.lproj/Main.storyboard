@@ -126,6 +126,7 @@
                     <connections>
                         <outlet property="cancelBarButton" destination="Ria-kZ-ZAF" id="2dK-GQ-IW5"/>
                         <outlet property="confirmPasswordTextField" destination="gb8-K3-wUE" id="dDy-pp-VBf"/>
+                        <outlet property="navigationBar" destination="dL7-3l-LPe" id="DiC-Ud-MAq"/>
                         <outlet property="newPasswordTextField" destination="ner-jE-QL2" id="onT-Rc-F6d"/>
                         <outlet property="oldPasswordTextField" destination="xUe-TA-vO8" id="1se-QP-uBL"/>
                         <outlet property="submitButton" destination="WYK-02-2FE" id="Rxs-DF-oYd"/>
