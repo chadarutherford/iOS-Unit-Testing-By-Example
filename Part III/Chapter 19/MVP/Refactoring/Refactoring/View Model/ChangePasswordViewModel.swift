@@ -20,7 +20,6 @@ struct ChangePasswordViewModel {
 	let submitButtonLabel = "Submit"
 	var isCancelButtonEnabled = true
 	var isBlurViewShowing = false
-	var isActivityIndicatorShowing = false
 	var inputFocus: InputFocus = .noKeyboard
 	var isOldPasswordEmpty: Bool { oldPassword.isEmpty }
 	var isNewPasswordEmpty: Bool { newPassword.isEmpty }
