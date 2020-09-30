@@ -24,7 +24,14 @@ class ChangePasswordViewController: UIViewController {
 	var securityToken = ""
 	private(set) var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
 	private(set) var activityIndicator = UIActivityIndicatorView(style: .large)
-	var viewModel: ChangePasswordViewModel!
+	var viewModel: ChangePasswordViewModel! {
+		didSet {
+			guard isViewLoaded else { return }
+			if oldValue.isCancelButtonEnabled != viewModel.isCancelButtonEnabled {
+				cancelBarButton.isEnabled = viewModel.isCancelButtonEnabled
+			}
+		}
+	}
 	
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - View Controller Life Cycle
@@ -36,6 +43,7 @@ class ChangePasswordViewController: UIViewController {
 		blurView.translatesAutoresizingMaskIntoConstraints = false
 		activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 		activityIndicator.color = .white
+		setLabels()
 	}
 	
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -88,7 +96,7 @@ class ChangePasswordViewController: UIViewController {
 	}
 	private func setUpWaitingAppearance() {
 		view.endEditing(true)
-		cancelBarButton.isEnabled = false
+		viewModel.isCancelButtonEnabled = false
 		view.backgroundColor = .clear
 		view.addSubview(blurView)
 		view.addSubview(activityIndicator)
@@ -133,7 +141,7 @@ class ChangePasswordViewController: UIViewController {
 		oldPasswordTextField.becomeFirstResponder()
 		view.backgroundColor = .white
 		blurView.removeFromSuperview()
-		cancelBarButton.isEnabled = true
+		viewModel.isCancelButtonEnabled = true
 	}
 	
 	private func hideSpinner() {
@@ -154,6 +162,14 @@ class ChangePasswordViewController: UIViewController {
 		alertController.addAction(okButton)
 		alertController.preferredAction = okButton
 		self.present(alertController, animated: true)
+	}
+	
+	private func setLabels() {
+		navigationBar.topItem?.title = viewModel.title
+		oldPasswordTextField.placeholder = viewModel.oldPasswordPlaceholder
+		newPasswordTextField.placeholder = viewModel.newPasswordPlaceholder
+		confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
+		submitButton.setTitle(viewModel.submitButtonLabel, for: .normal)
 	}
 }
 
