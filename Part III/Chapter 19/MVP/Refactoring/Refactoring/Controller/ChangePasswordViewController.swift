@@ -25,17 +25,12 @@ class ChangePasswordViewController: UIViewController {
 	private(set) var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
 	private(set) var activityIndicator = UIActivityIndicatorView(style: .large)
 	private lazy var presenter = ChangePasswordPresenter(view: self, viewModel: viewModel)
+	
 	var viewModel: ChangePasswordViewModel! {
 		didSet {
 			guard isViewLoaded else { return }
-			if oldValue.isCancelButtonEnabled != viewModel.isCancelButtonEnabled {
-				cancelBarButton.isEnabled = viewModel.isCancelButtonEnabled
-			}
 			if oldValue.inputFocus != viewModel.inputFocus {
 				updateInputFocus()
-			}
-			if oldValue.isBlurViewShowing != viewModel.isBlurViewShowing {
-				updateBlurView()
 			}
 		}
 	}
@@ -104,8 +99,8 @@ class ChangePasswordViewController: UIViewController {
 	}
 	private func setUpWaitingAppearance() {
 		viewModel.inputFocus = .noKeyboard
-		viewModel.isCancelButtonEnabled = false
-		viewModel.isBlurViewShowing = true
+		setCancelButtonEnabled(false)
+		showBlurView()
 		showActivityIndicator()
 	}
 	
@@ -132,8 +127,8 @@ class ChangePasswordViewController: UIViewController {
 		newPasswordTextField.text = ""
 		confirmPasswordTextField.text = ""
 		viewModel.inputFocus = .oldPassword
-		viewModel.isBlurViewShowing = false
-		viewModel.isCancelButtonEnabled = true
+		hideBlurView()
+		setCancelButtonEnabled(true)
 	}
 	
 	
@@ -156,20 +151,6 @@ class ChangePasswordViewController: UIViewController {
 			newPasswordTextField.becomeFirstResponder()
 		case .confirmPassword:
 			confirmPasswordTextField.becomeFirstResponder()
-		}
-	}
-	
-	private func updateBlurView() {
-		if viewModel.isBlurViewShowing {
-			view.backgroundColor = .clear
-			view.addSubview(blurView)
-			NSLayoutConstraint.activate([
-				blurView.heightAnchor.constraint(equalTo: view.heightAnchor),
-				blurView.widthAnchor.constraint(equalTo: view.widthAnchor)
-			])
-		} else {
-			view.backgroundColor = .white
-			blurView.removeFromSuperview()
 		}
 	}
 	
@@ -210,8 +191,26 @@ extension ChangePasswordViewController: ChangePasswordViewCommands {
 		activityIndicator.removeFromSuperview()
 	}
 	
+	func hideBlurView() {
+		view.backgroundColor = .white
+		blurView.removeFromSuperview()
+	}
+	
+	func showBlurView() {
+		view.backgroundColor = .clear
+		view.addSubview(blurView)
+		NSLayoutConstraint.activate([
+			blurView.heightAnchor.constraint(equalTo: view.heightAnchor),
+			blurView.widthAnchor.constraint(equalTo: view.widthAnchor)
+		])
+	}
+	
 	func dismissModal() {
 		self.dismiss(animated: true)
+	}
+	
+	func setCancelButtonEnabled(_ enabled: Bool) {
+		cancelBarButton.isEnabled = enabled
 	}
 	
 	private func showAlert(message: String, okAction: @escaping (UIAlertAction) -> Void) {
