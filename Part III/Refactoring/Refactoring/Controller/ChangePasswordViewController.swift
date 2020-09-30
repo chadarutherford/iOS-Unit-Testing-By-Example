@@ -47,10 +47,16 @@ class ChangePasswordViewController: UIViewController {
 	}
 	
 	@IBAction private func changePassword() {
-		// 1. Validate inputs
+		guard validateInputs() else { return }
+		setUpWaitingAppearance()
+		attemptToChangePassword()
+	}
+	
+	private func validateInputs() -> Bool {
+		
 		if oldPasswordTextField.text?.isEmpty ?? true {
 			oldPasswordTextField.becomeFirstResponder()
-			return
+			return false
 		}
 		
 		if newPasswordTextField.text?.isEmpty ?? true {
@@ -67,7 +73,7 @@ class ChangePasswordViewController: UIViewController {
 			alertController.addAction(okButton)
 			alertController.preferredAction = okButton
 			self.present(alertController, animated: true)
-			return
+			return false
 		}
 		
 		if newPasswordTextField.text?.count ?? 0 < 6 {
@@ -86,7 +92,7 @@ class ChangePasswordViewController: UIViewController {
 			alertController.addAction(okButton)
 			alertController.preferredAction = okButton
 			self.present(alertController, animated: true)
-			return
+			return false
 		}
 		
 		if newPasswordTextField.text != confirmPasswordTextField.text {
@@ -106,10 +112,12 @@ class ChangePasswordViewController: UIViewController {
 			alertController.addAction(okButton)
 			alertController.preferredAction = okButton
 			self.present(alertController, animated: true)
-			return
+			return false
 		}
-		
-		// 2. Setup waiting appearance
+		return true
+	}
+	
+	private func setUpWaitingAppearance() {
 		oldPasswordTextField.resignFirstResponder()
 		newPasswordTextField.resignFirstResponder()
 		confirmPasswordTextField.resignFirstResponder()
@@ -124,8 +132,6 @@ class ChangePasswordViewController: UIViewController {
 			activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
 		])
 		activityIndicator.startAnimating()
-		
-		attemptToChangePassword()
 	}
 	
 	private func attemptToChangePassword() {
