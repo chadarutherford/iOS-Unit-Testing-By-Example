@@ -30,6 +30,9 @@ class ChangePasswordViewController: UIViewController {
 			if oldValue.isCancelButtonEnabled != viewModel.isCancelButtonEnabled {
 				cancelBarButton.isEnabled = viewModel.isCancelButtonEnabled
 			}
+			if oldValue.inputFocus != viewModel.inputFocus {
+				updateInputFocus()
+			}
 		}
 	}
 	
@@ -49,7 +52,7 @@ class ChangePasswordViewController: UIViewController {
 	// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 	// MARK: - Actions
 	@IBAction private func cancel() {
-		view.endEditing(true)
+		viewModel.inputFocus = .noKeyboard
 		dismiss(animated: true)
 	}
 	
@@ -62,13 +65,13 @@ class ChangePasswordViewController: UIViewController {
 	private func validateInputs() -> Bool {
 		
 		if oldPasswordTextField.text?.isEmpty ?? true {
-			oldPasswordTextField.becomeFirstResponder()
+			viewModel.inputFocus = .oldPassword
 			return false
 		}
 		
 		if newPasswordTextField.text?.isEmpty ?? true {
 			showAlert(message: viewModel.enterNewPasswordMessage) { [weak self] _ in
-				self?.newPasswordTextField.becomeFirstResponder()
+				self?.viewModel.inputFocus = .newPassword
 			}
 			return false
 		}
@@ -92,10 +95,10 @@ class ChangePasswordViewController: UIViewController {
 	private func resetNewPasswords() {
 		newPasswordTextField.text = ""
 		confirmPasswordTextField.text = ""
-		newPasswordTextField.becomeFirstResponder()
+		viewModel.inputFocus = .newPassword
 	}
 	private func setUpWaitingAppearance() {
-		view.endEditing(true)
+		viewModel.inputFocus = .noKeyboard
 		viewModel.isCancelButtonEnabled = false
 		view.backgroundColor = .clear
 		view.addSubview(blurView)
@@ -138,7 +141,7 @@ class ChangePasswordViewController: UIViewController {
 		oldPasswordTextField.text = ""
 		newPasswordTextField.text = ""
 		confirmPasswordTextField.text = ""
-		oldPasswordTextField.becomeFirstResponder()
+		viewModel.inputFocus = .oldPassword
 		view.backgroundColor = .white
 		blurView.removeFromSuperview()
 		viewModel.isCancelButtonEnabled = true
@@ -171,14 +174,27 @@ class ChangePasswordViewController: UIViewController {
 		confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
 		submitButton.setTitle(viewModel.submitButtonLabel, for: .normal)
 	}
+	
+	private func updateInputFocus() {
+		switch viewModel.inputFocus {
+		case .noKeyboard:
+			view.endEditing(true)
+		case .oldPassword:
+			oldPasswordTextField.becomeFirstResponder()
+		case .newPassword:
+			newPasswordTextField.becomeFirstResponder()
+		case .confirmPassword:
+			confirmPasswordTextField.becomeFirstResponder()
+		}
+	}
 }
 
 extension ChangePasswordViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		if textField == oldPasswordTextField {
-			newPasswordTextField.becomeFirstResponder()
+			viewModel.inputFocus = .newPassword
 		} else if textField == newPasswordTextField {
-			confirmPasswordTextField.becomeFirstResponder()
+			viewModel.inputFocus = .confirmPassword
 		} else if textField == confirmPasswordTextField {
 			changePassword()
 		}
