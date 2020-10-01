@@ -37,6 +37,46 @@ class GreeterWithoutNameTests: XCTestCase {
 		XCTAssertEqual(result, "Good afternoon.")
 	}
 	
+	func test_greet_with500pm_shouldSayGoodEvening() {
+		let result = sut.greet(time: date(hour: 17, minute: 00))
+		XCTAssertEqual(result, "Good evening.")
+	}
+	
+	func test_greet_with1159pm_shouldSayGoodEvening() {
+		let result = sut.greet(time: date(hour: 23, minute: 59))
+		XCTAssertEqual(result, "Good evening.")
+	}
+	
+	func test_greet_with800pm_shouldSayGoodEvening() {
+		let result = sut.greet(time: date(hour: 20, minute: 00))
+		XCTAssertEqual(result, "Good evening.")
+	}
+	
+	func test_greet_with1200am_shouldSayGoodEvening() {
+		let result = sut.greet(time: date(hour: 0, minute: 00))
+		XCTAssertEqual(result, "Good evening.")
+	}
+	
+	func test_greet_with459am_shouldSayGoodEvening() {
+		let result = sut.greet(time: date(hour: 4, minute: 59))
+		XCTAssertEqual(result, "Good evening.")
+	}
+	
+	func test_greet_with200am_shouldSayGoodEvening() {
+		let result = sut.greet(time: date(hour: 2, minute: 00))
+		XCTAssertEqual(result, "Good evening.")
+	}
+	
+	func test_greet_with500am_shouldSayGoodMorning() {
+		let result = sut.greet(time: date(hour: 5, minute: 00))
+		XCTAssertEqual(result, "Good morning.")
+	}
+	
+	func test_greet_with800am_shouldSayGoodMorning() {
+		let result = sut.greet(time: date(hour: 8, minute: 00))
+		XCTAssertEqual(result, "Good morning.")
+	}
+	
 	private func date(hour: Int, minute: Int) -> Date {
 		let components = DateComponents(calendar: Calendar.current, hour: hour, minute: minute)
 		return components.date!
