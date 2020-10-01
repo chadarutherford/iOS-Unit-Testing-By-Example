@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6332359F2525509D0023F534 /* TDD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6332359D2525509D0023F534 /* TDD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		633235AF252550BB0023F534 /* TDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332359A2525509D0023F534 /* TDD.framework */; };
+		63B95D7D2525516A00659110 /* GreeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B95D7C2525516A00659110 /* GreeterTests.swift */; };
+		63B95D822525521300659110 /* Greeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B95D812525521300659110 /* Greeter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		6332359E2525509D0023F534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		633235AA252550BB0023F534 /* TDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		633235AE252550BB0023F534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B95D7C2525516A00659110 /* GreeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreeterTests.swift; sourceTree = "<group>"; };
+		63B95D812525521300659110 /* Greeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		6332359C2525509D0023F534 /* TDD */ = {
 			isa = PBXGroup;
 			children = (
+				63B95D802525520600659110 /* Model */,
 				6332359D2525509D0023F534 /* TDD.h */,
 				6332359E2525509D0023F534 /* Info.plist */,
 			);
@@ -78,9 +83,18 @@
 		633235AB252550BB0023F534 /* TDDTests */ = {
 			isa = PBXGroup;
 			children = (
+				63B95D7C2525516A00659110 /* GreeterTests.swift */,
 				633235AE252550BB0023F534 /* Info.plist */,
 			);
 			path = TDDTests;
+			sourceTree = "<group>";
+		};
+		63B95D802525520600659110 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63B95D812525521300659110 /* Greeter.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +158,11 @@
 				TargetAttributes = {
 					633235992525509D0023F534 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 					633235A9252550BB0023F534 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -191,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B95D822525521300659110 /* Greeter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B95D7D2525516A00659110 /* GreeterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +355,7 @@
 		633235A32525509D0023F534 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
@@ -353,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.TDD;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,6 +381,7 @@
 		633235A42525509D0023F534 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
@@ -385,6 +406,8 @@
 		633235B3252550BB0023F534 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = TDDTests/Info.plist;
@@ -395,6 +418,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chadarutherford.TDDTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,6 +427,8 @@
 		633235B4252550BB0023F534 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7DFWNNEL3;
 				INFOPLIST_FILE = TDDTests/Info.plist;
