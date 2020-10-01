@@ -12,6 +12,15 @@ struct Greeter {
 	}
 	
 	func greet(time: Date) -> String {
-		return "Good morning"
+		let theHour = hour(for: time)
+		if  12 <= theHour && theHour <= 16 {
+			return "Good afternoon."
+		}
+		return "Good morning."
+	}
+	
+	private func hour(for time: Date) -> Int {
+		let components = Calendar.current.dateComponents([.hour], from: time)
+		return components.hour ?? 0
 	}
 }

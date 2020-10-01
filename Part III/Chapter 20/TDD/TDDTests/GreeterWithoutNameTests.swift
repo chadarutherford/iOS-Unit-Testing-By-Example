@@ -27,6 +27,16 @@ class GreeterWithoutNameTests: XCTestCase {
 		XCTAssertEqual(result, "Good afternoon.")
 	}
 	
+	func test_greet_with459pm_shouldSayGoodAfternoon() {
+		let result = sut.greet(time: date(hour: 16, minute: 59))
+		XCTAssertEqual(result, "Good afternoon.")
+	}
+	
+	func test_greet_with200pm_shouldSayGoodAfternoon() {
+		let result = sut.greet(time: date(hour: 14, minute: 00))
+		XCTAssertEqual(result, "Good afternoon.")
+	}
+	
 	private func date(hour: Int, minute: Int) -> Date {
 		let components = DateComponents(calendar: Calendar.current, hour: hour, minute: minute)
 		return components.date!
