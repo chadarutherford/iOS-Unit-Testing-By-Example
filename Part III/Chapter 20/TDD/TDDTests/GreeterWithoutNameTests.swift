@@ -77,11 +77,6 @@ class GreeterWithoutNameTests: XCTestCase {
 		XCTAssertEqual(result, "Good morning.")
 	}
 	
-	private func date(hour: Int, minute: Int) -> Date {
-		let components = DateComponents(calendar: Calendar.current, hour: hour, minute: minute)
-		return components.date!
-	}
-	
 	override func tearDown() {
 		sut = nil
 		super.tearDown()
